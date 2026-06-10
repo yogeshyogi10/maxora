@@ -65,12 +65,10 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold text-xs tracking-widest uppercase mb-6 border-l-2 border-[#B03DFF] pl-3">Services</h4>
           <ul className="flex flex-col gap-3 text-sm text-white/60 font-light">
-            <li><Link href="/services" className="hover:text-white transition-colors">Custom Development</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">WordPress Setup</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">Shopify Development</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">UI/UX Design Hub</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">Branding Guidelines</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors">SEO & PPC Marketing</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors">Web Development</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors">Designing</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors">Social media Management</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors">Digital Marketing</Link></li>
           </ul>
         </div>
 
@@ -92,21 +90,21 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5 text-sm text-white/60 font-light">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#B03DFF] flex-shrink-0" />
-                <a href="mailto:hello@maxoratech.com" className="hover:text-white transition-colors break-all">hello@maxoratech.com</a>
+                <a href="mailto:hello@maxoratech.com" className="hover:text-white transition-colors break-all">maxoratechsolutions@gmail.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#B03DFF] flex-shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">+91 98765 43210</a>
+                <a href="tel:+919944163807" className="hover:text-white transition-colors">+91 99441 63807</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#B03DFF] flex-shrink-0 mt-0.5" />
-                <span>Mumbai Corporate Offices, India</span>
+                <span>Coimbatore, India</span>
               </li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-semibold text-xs tracking-widest uppercase mb-3">Newsletter</h4>
-            <form onSubmit={handleSubscribe} className="relative flex items-center">
+            <form onSubmit={handleSubscribe} className="relative flex items-center" suppressHydrationWarning>
               <input
                 type="email"
                 required
@@ -114,11 +112,13 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Business email..."
                 className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#B03DFF] focus:ring-1 focus:ring-[#B03DFF] transition-all"
+                suppressHydrationWarning
               />
               <button
                 type="submit"
                 className="absolute right-1 p-1.5 bg-[#B03DFF] hover:bg-[#D9B3FF] text-white hover:text-black rounded-full transition-all duration-300"
                 aria-label="Subscribe"
+                suppressHydrationWarning
               >
                 <Send className="w-3 h-3" />
               </button>

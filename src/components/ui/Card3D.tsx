@@ -3,12 +3,12 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-interface Card3DProps {
+interface Card3DProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrag'> {
   children: React.ReactNode;
   className?: string;
 }
 
-export default function Card3D({ children, className = "" }: Card3DProps) {
+export default function Card3D({ children, className = "", ...rest }: Card3DProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
@@ -58,6 +58,8 @@ export default function Card3D({ children, className = "" }: Card3DProps) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
+      {...rest as any}
+
       style={{
         rotateX,
         rotateY,

@@ -3,17 +3,17 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import confetti from "canvas-confetti";
-import { 
-  Rocket, 
-  ShoppingBag, 
-  Utensils, 
-  HeartPulse, 
-  GraduationCap, 
-  Laptop, 
-  Building2, 
-  Briefcase, 
-  ArrowRight, 
-  CheckCircle2, 
+import {
+  Rocket,
+  ShoppingBag,
+  Utensils,
+  HeartPulse,
+  GraduationCap,
+  Laptop,
+  Building2,
+  Briefcase,
+  ArrowRight,
+  CheckCircle2,
   Star,
   ChevronLeft,
   ChevronRight,
@@ -39,11 +39,12 @@ import Card3D from "@/components/ui/Card3D";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import Accordion from "@/components/ui/Accordion";
-import { 
-  servicesData, 
-  projectsData, 
-  whyChooseData, 
-  pricingPlans, 
+import {
+  servicesData,
+  projectsData,
+  whyChooseData,
+  pricingPlans,
+  webDevPricingPlans,
   faqData
 } from "@/lib/data";
 
@@ -227,13 +228,13 @@ export default function HomePage() {
 
   return (
     <div className="relative">
-      
+
       {/* 1. HERO SECTION (Scroll Parallax Enabled) */}
       <section ref={heroRef} className="relative min-h-[92vh] flex items-center pt-8 md:pt-16 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
-          
+
           {/* Left Text */}
-          <motion.div 
+          <motion.div
             style={{ y: textY, opacity: heroOpacity }}
             className="lg:col-span-7 flex flex-col gap-6 text-left"
           >
@@ -264,13 +265,13 @@ export default function HomePage() {
             {/* Statistics Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 border-t border-white/5 pt-8">
               {[
-                { number: 50, suffix: "+", label: "Projects Delivered" },
-                { number: 20, suffix: "+", label: "Happy Clients" },
-                { number: 99, suffix: "%", label: "Satisfaction Rate" },
-                { number: 3, suffix: "+", label: "Years Experience" }
+                { number: 6, suffix: "+", label: "Projects Delivered" },
+                { number: 10, suffix: "+", label: "Happy Clients" },
+                { number: 99.9, suffix: "%", label: "Satisfaction Rate" },
+                { number: 1, suffix: "+", label: "Years Experience" }
               ].map((stat, idx) => (
-                <motion.div 
-                  key={idx} 
+                <motion.div
+                  key={idx}
                   className="flex flex-col"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -286,7 +287,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Right Graphics */}
-          <motion.div 
+          <motion.div
             style={{ y: illustrationY, opacity: heroOpacity }}
             className="lg:col-span-5 flex justify-center relative"
           >
@@ -304,7 +305,7 @@ export default function HomePage() {
             <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-2 font-display">Industries We Specialize In</h2>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -314,7 +315,7 @@ export default function HomePage() {
             {industryIcons.map((ind, index) => {
               const IconComp = ind.icon;
               return (
-                <motion.div 
+                <motion.div
                   key={index}
                   variants={fadeInUp}
                   className="p-5 rounded-2xl border border-glass bg-white/[0.02] flex flex-col items-center justify-center text-center gap-3 transition-all duration-300 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/5 group"
@@ -333,9 +334,9 @@ export default function HomePage() {
       {/* 3. ABOUT SECTION (Entrance Reveal) */}
       <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
+
           {/* Left Column: Vision & Mission */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -347,27 +348,27 @@ export default function HomePage() {
               Transforming Ideas <br />Into Digital Success
             </h2>
             <p className="text-white/70 text-sm md:text-base leading-relaxed font-light">
-              At Maxora, we transform ideas into scalable digital solutions that help businesses attract customers, increase conversions, establish authority, and achieve measurable growth.
+              At Maxora, our mission is to help brands launch and grow online through professionally crafted websites, compelling visual designs, and result-driven digital strategies.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
               <div className="p-5 rounded-2xl border border-glass bg-[#0d0724]/20">
                 <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-2">Our Mission</h4>
                 <p className="text-white/60 text-xs font-light leading-relaxed">
-                  Engineering world-class web interfaces and marketing engines that empower ambitious businesses to capture and convert opportunities.
+                  We aim to provide end-to-end solutions — from website development to social media management and SEO — enabling our clients to build credibility, attract customers, and scale their business in the digital world.
                 </p>
               </div>
               <div className="p-5 rounded-2xl border border-glass bg-[#0d0724]/20">
                 <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-2">Our Vision</h4>
                 <p className="text-white/60 text-xs font-light leading-relaxed">
-                  To be the global benchmark for luxury digital craftsmanship, where high-end aesthetics meet lightning-fast operational speeds.
+                  To empower individuals and businesses to establish a strong digital presence by making online growth simple, accessible, and impactful for everyone.
                 </p>
               </div>
             </div>
           </motion.div>
 
           {/* Right Column: Values grid with Stagger */}
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -380,13 +381,13 @@ export default function HomePage() {
               { value: "High Innovation", desc: "Deploying latest Next.js 15 & React 19 standards." },
               { value: "Client Obsessed", desc: "Dedicated support sprints and active iterations." }
             ].map((v, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 variants={fadeInUp}
                 className="p-6 rounded-2xl border border-glass bg-white/[0.01] flex flex-col gap-2 hover:border-[#B03DFF]/20 hover:bg-white/[0.02] transition-all duration-300"
               >
                 <div className="w-8 h-8 rounded-full bg-[#B03DFF]/10 flex items-center justify-center text-xs font-bold text-[#D9B3FF] border border-[#B03DFF]/20">
-                  {i+1}
+                  {i + 1}
                 </div>
                 <h4 className="text-white font-bold text-sm mt-2">{v.value}</h4>
                 <p className="text-white/50 text-xs font-light leading-relaxed">{v.desc}</p>
@@ -409,18 +410,18 @@ export default function HomePage() {
           </div>
 
           {/* Service Cards Grid with Stagger */}
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
           >
             {servicesData.map((cat, idx) => {
               const IconComp = serviceIcons[cat.iconName] || Code2;
               return (
                 <motion.div key={cat.id} variants={fadeInUp}>
-                  <Card3D className="p-6 flex flex-col gap-5 h-full">
+                  <Card3D className="p-6 flex flex-col gap-5 h-full" onClick={() => { }} role="button">
                     {/* Header */}
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#660F56] to-[#B03DFF] flex items-center justify-center border border-white/10 shadow-lg">
@@ -455,7 +456,7 @@ export default function HomePage() {
       {/* 5. PROCESS SECTION (Dynamic Scrollytelling Alternating Timeline) */}
       <section ref={timelineRef} className="py-24 relative z-10 overflow-hidden bg-[#050014]/20">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Operational Sprints</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Our Luxury Engineering Journey</h2>
@@ -467,8 +468,8 @@ export default function HomePage() {
           <div className="relative">
             {/* The Scroll-Linked Timeline Progress Line */}
             <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-[2px] bg-white/5 -translate-x-1/2">
-              <motion.div 
-                className="w-full h-full bg-gradient-to-b from-[#660F56] via-[#B03DFF] to-[#D9B3FF] origin-top" 
+              <motion.div
+                className="w-full h-full bg-gradient-to-b from-[#660F56] via-[#B03DFF] to-[#D9B3FF] origin-top"
                 style={{ scaleY }}
               />
             </div>
@@ -484,13 +485,12 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ type: "spring", stiffness: 80, damping: 18 }}
-                    className={`flex flex-col md:flex-row items-start md:items-center justify-between w-full relative ${
-                      isEven ? "md:flex-row-reverse" : ""
-                    }`}
+                    className={`flex flex-col md:flex-row items-start md:items-center justify-between w-full relative ${isEven ? "md:flex-row-reverse" : ""
+                      }`}
                   >
                     {/* Glowing Timeline Connector Node */}
                     <div className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full bg-[#050014] border border-[#B03DFF] flex items-center justify-center -translate-x-1/2 z-20">
-                      <motion.div 
+                      <motion.div
                         className="w-2.5 h-2.5 rounded-full bg-[#D9B3FF]"
                         whileInView={{ scale: [1, 1.35, 1] }}
                         viewport={{ once: false }}
@@ -528,7 +528,7 @@ export default function HomePage() {
       {/* 6. FEATURED PROJECTS SECTION (Grid Reveal) */}
       <section id="portfolio" className="py-24 border-t border-white/5 bg-[#050014]/40 relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Creative Portfolio</span>
@@ -539,7 +539,7 @@ export default function HomePage() {
             </CustomButton>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -559,7 +559,7 @@ export default function HomePage() {
       {/* 7. WHY CHOOSE MAXORA (Grid Reveal) */}
       <section className="py-24 relative z-10 bg-[#050014]/65">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium font-display">Proven Standards</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Why Ambitious Brands Choose Us</h2>
@@ -568,7 +568,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -578,7 +578,7 @@ export default function HomePage() {
             {whyChooseData.map((item, idx) => {
               const IconComp = chooseIcons[item.iconName] || Code2;
               return (
-                <motion.div 
+                <motion.div
                   key={idx}
                   variants={fadeInUp}
                   className="p-6 rounded-2xl border border-glass bg-white/[0.01] hover:bg-[#B03DFF]/5 hover:border-[#B03DFF]/30 transition-all duration-500 flex flex-col gap-4 group"
@@ -599,7 +599,7 @@ export default function HomePage() {
       {/* 8. PRICING SECTION (Grid Reveal) */}
       <section className="py-24 border-y border-white/5 bg-[#050014]/40 relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Transparent Pricing</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Plans Fit For Your Ambition</h2>
@@ -608,7 +608,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -616,14 +616,13 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
           >
             {pricingPlans.map((plan, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 variants={fadeInUp}
-                className={`relative rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 ${
-                  plan.isPopular 
-                    ? "border-[#B03DFF] bg-[#B03DFF]/5 shadow-[0_0_30px_rgba(176,61,255,0.15)] md:scale-105" 
-                    : "border-glass bg-white/[0.01] hover:border-[#B03DFF]/20"
-                }`}
+                className={`relative rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 ${plan.isPopular
+                  ? "border-[#B03DFF] bg-[#B03DFF]/5 shadow-[0_0_30px_rgba(176,61,255,0.15)] md:scale-105"
+                  : "border-glass bg-white/[0.01] hover:border-[#B03DFF]/20"
+                  }`}
               >
                 {plan.isPopular && (
                   <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#B03DFF] text-white text-[9px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full border border-white/20 shadow-md">
@@ -634,7 +633,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-white font-extrabold text-lg mt-2">{plan.name}</h3>
                   <p className="text-white/50 text-xs mt-1.5 font-light min-h-[40px] leading-relaxed">{plan.description}</p>
-                  
+
                   {/* Price */}
                   <div className="mt-4 mb-6">
                     <span className="text-3xl font-extrabold font-display text-white">{plan.price}</span>
@@ -655,9 +654,82 @@ export default function HomePage() {
                 </div>
 
                 <div className="mt-8">
-                  <CustomButton 
-                    href="#contact" 
-                    variant={plan.isPopular ? "primary" : "outline"} 
+                  <CustomButton
+                    href="#contact"
+                    variant={plan.isPopular ? "primary" : "outline"}
+                    className="w-full text-center text-xs py-3"
+                  >
+                    {plan.ctaText}
+                  </CustomButton>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* 8b. WEBSITE DEVELOPMENT PRICING SECTION (Grid Reveal) */}
+      <section className="py-24 border-b border-white/5 bg-[#050014]/50 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Website Development Pricing</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Dedicated Web Solutions</h2>
+            <p className="text-white/60 text-xs md:text-sm font-light mt-3">
+              From landing pages to complex corporate systems.
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+          >
+            {webDevPricingPlans.map((plan, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                className={`relative rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 ${plan.isPopular
+                  ? "border-[#B03DFF] bg-[#B03DFF]/5 shadow-[0_0_30px_rgba(176,61,255,0.15)] md:scale-105"
+                  : "border-glass bg-white/[0.01] hover:border-[#B03DFF]/20"
+                  }`}
+              >
+                {plan.isPopular && (
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#B03DFF] text-white text-[9px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full border border-white/20 shadow-md">
+                    Most Popular
+                  </span>
+                )}
+
+                <div>
+                  <h3 className="text-white font-extrabold text-lg mt-2">{plan.name}</h3>
+                  <p className="text-white/50 text-xs mt-1.5 font-light min-h-[40px] leading-relaxed">{plan.description}</p>
+
+                  {/* Price */}
+                  <div className="mt-4 mb-6">
+                    <span className="text-3xl font-extrabold font-display text-white">{plan.price}</span>
+                    {plan.price !== "Custom Quote" && <span className="text-white/40 text-xs font-light"> onwards</span>}
+                  </div>
+
+                  <hr className="border-white/5 my-4" />
+
+                  {/* Features */}
+                  <ul className="flex flex-col gap-3">
+                    {plan.features.map((feat, fidx) => (
+                      <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-8">
+                  <CustomButton
+                    href="#contact"
+                    variant={plan.isPopular ? "primary" : "outline"}
                     className="w-full text-center text-xs py-3"
                   >
                     {plan.ctaText}
@@ -673,7 +745,7 @@ export default function HomePage() {
       {/* 9. TESTIMONIAL SECTION */}
       <section className="py-24 relative z-10 bg-[#050014]/60">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          
+
           <div className="text-center mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Testimonials</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Client Endorsements</h2>
@@ -682,7 +754,7 @@ export default function HomePage() {
           {/* Testimonial slider wrapper */}
           <div className="relative p-8 md:p-12 rounded-3xl border border-glass bg-[#0d0724]/40 overflow-hidden">
             <div className="absolute top-6 left-8 text-8xl font-serif text-[#B03DFF]/10 pointer-events-none">“</div>
-            
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentTestimonial}
@@ -715,22 +787,24 @@ export default function HomePage() {
                         <Star key={i} className="w-4 h-4 fill-amber-400 stroke-amber-400" />
                       ))}
                     </div>
-                    
+
                     <div className="flex gap-2">
-                      <button 
-                        onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                        className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
-                        aria-label="Previous Review"
-                      >
-                        <ChevronLeft className="w-4 h-4" />
-                      </button>
-                      <button 
-                        onClick={() => setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                        className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
-                        aria-label="Next Review"
-                      >
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
+                                      <button
+                  suppressHydrationWarning={true}
+                  onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                  className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
+                  aria-label="Previous Review"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  suppressHydrationWarning={true}
+                  onClick={() => setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                  className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
+                  aria-label="Next Review"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
                     </div>
                   </div>
                 </div>
@@ -744,7 +818,7 @@ export default function HomePage() {
       {/* 10. FAQ SECTION */}
       <section className="py-24 border-t border-white/5 relative z-10 bg-[#050014]/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold font-display">Common Queries</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Frequently Asked Questions</h2>
@@ -777,9 +851,9 @@ export default function HomePage() {
             <div className="relative z-10 w-full max-w-md bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
               <AnimatePresence mode="wait">
                 {!auditSubmitted ? (
-                  <motion.form 
+                  <motion.form
                     key="form"
-                    onSubmit={handleAuditSubmit} 
+                    onSubmit={handleAuditSubmit}
                     className="flex flex-col gap-4"
                   >
                     <div>
@@ -812,7 +886,7 @@ export default function HomePage() {
                     </button>
                   </motion.form>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -836,7 +910,7 @@ export default function HomePage() {
       {/* 12. CONTACT SECTION */}
       <section id="contact" className="py-24 border-t border-white/5 relative z-10 bg-[#050014]/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
+
           {/* Left Text */}
           <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Consultation Desk</span>
@@ -866,12 +940,12 @@ export default function HomePage() {
 
           {/* Form Side */}
           <div className="lg:col-span-7 bg-white/[0.02] border border-glass rounded-3xl p-8 backdrop-blur-md relative overflow-hidden">
-            
+
             <AnimatePresence mode="wait">
               {!contactSubmitted ? (
-                <motion.form 
+                <motion.form
                   key="form"
-                  onSubmit={handleContactSubmit} 
+                  onSubmit={handleContactSubmit}
                   className="flex flex-col gap-5"
                 >
                   {formError && (
@@ -943,11 +1017,10 @@ export default function HomePage() {
                           key={tier}
                           type="button"
                           onClick={() => setContactBudget(tier)}
-                          className={`px-3 py-2 rounded-xl text-[10px] border font-medium text-center transition-all cursor-pointer ${
-                            contactBudget === tier 
-                              ? "border-[#B03DFF] bg-[#B03DFF]/10 text-white" 
-                              : "border-white/10 bg-white/5 text-white/50 hover:text-white/80"
-                          }`}
+                          className={`px-3 py-2 rounded-xl text-[10px] border font-medium text-center transition-all cursor-pointer ${contactBudget === tier
+                            ? "border-[#B03DFF] bg-[#B03DFF]/10 text-white"
+                            : "border-white/10 bg-white/5 text-white/50 hover:text-white/80"
+                            }`}
                         >
                           {tier}
                         </button>
@@ -974,7 +1047,7 @@ export default function HomePage() {
                   </button>
                 </motion.form>
               ) : (
-                <motion.div 
+                <motion.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}

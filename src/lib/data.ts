@@ -86,91 +86,55 @@ export interface PricingPlan {
 
 export const servicesData: ServiceCategory[] = [
   {
-    id: "custom-dev",
-    title: "Custom Development",
-    iconName: "Code2",
-    description: "High-performance bespoke web applications engineered with cutting-edge javascript frameworks for unmatched scalability.",
-    services: [
-      "Next.js & React Applications",
-      "Angular Enterprise Interfaces",
-      "Full Stack Node/Python Platforms",
-      "Interactive Admin Dashboards",
-      "API Integrations & Custom Webhooks"
-    ]
-  },
-  {
-    id: "wordpress-dev",
-    title: "WordPress Development",
-    iconName: "Globe",
-    description: "Highly customized, secure, and lightning-fast WordPress architectures tailored to support corporate identity and user experience.",
-    services: [
-      "Bespoke Theme Engineering",
-      "Corporate & Business Portals",
-      "High-Converting Landing Pages",
-      "WooCommerce E-Commerce Engines"
-    ]
-  },
-  {
-    id: "shopify-dev",
-    title: "Shopify Development",
-    iconName: "ShoppingBag",
-    description: "High-end, performance-optimized e-commerce storefronts built to boost conversions, retention, and brand fidelity.",
-    services: [
-      "Custom Shopify Store Setup",
-      "Theme Customization & Liquid Coding",
-      "App Integrations & API Sync",
-      "Conversion Rate Optimization (CRO)"
-    ]
-  },
-  {
-    id: "branding-creative",
-    title: "Branding & Creative Design",
+    id: "design",
+    title: "Design & Creative",
     iconName: "Palette",
-    description: "Artistic brand strategy, logos, guidelines, and corporate marketing materials that resonate and command premium value.",
+    description: "Premium brand design, UI/UX, visual storytelling, and high‑impact graphics.",
     services: [
-      "Full Visual Brand Guidelines",
-      "High-End Corporate Brochures",
-      "Pitch Decks & Company Profiles",
-      "Bespoke Iconography & Logo Suites"
+      "Brand Identity & Guidelines",
+      "UI/UX Design & Prototyping",
+      "Graphic Design & Visual Assets",
+      "Motion Graphics & Animation",
+      "Presentation & Pitch Deck Design"
+    ]
+  },
+  {
+    id: "web-dev",
+    title: "Web Development",
+    iconName: "Code2",
+    description: "Custom, high‑performance websites and web applications built with modern frameworks.",
+    services: [
+      "Next.js & React Apps",
+      "Static Site Generation (SSG)",
+      "CMS / Headless Integration",
+      "Performance Optimization",
+      "Responsive & Mobile‑First Design"
+    ]
+  },
+  {
+    id: "smm",
+    title: "Social Media Management (SMM)",
+    iconName: "Share2",
+    description: "Strategic social presence, content creation, and community growth for premium brands.",
+    services: [
+      "Content Calendar & Scheduling",
+      "Community Management & Engagement",
+      "Paid Social Ads & Campaigns",
+      "Analytics & Reporting",
+      "Influencer Partnerships"
     ]
   },
   {
     id: "digital-marketing",
     title: "Digital Marketing",
     iconName: "Megaphone",
-    description: "Result-driven marketing campaigns focusing on customer acquisition, Search Engine Optimization, and ROI growth.",
+    description: "Growth‑focused marketing across channels to drive leads and conversions.",
     services: [
-      "Advanced Search Engine Optimization (SEO)",
-      "Local SEO & Schema Optimization",
-      "Google Ads (PPC) Management",
-      "Meta Ads (Facebook & Instagram) Campaigns",
-      "Lead Generation & Nurture Funnels"
-    ]
-  },
-  {
-    id: "social-media",
-    title: "Social Media Management",
-    iconName: "Share2",
-    description: "Comprehensive social strategy, content curation, and community growth for modern premium brands.",
-    services: [
-      "Instagram Aesthetic & Reels Planning",
-      "Facebook Group & Page Management",
-      "LinkedIn Thought Leadership Articles",
-      "Content Strategy & Copywriting Calendar",
-      "Social Analytics & Weekly Tracking"
-    ]
-  },
-  {
-    id: "poster-design",
-    title: "Poster & Creative Design",
-    iconName: "Layers",
-    description: "High-impact visual campaigns and graphics engineered to grab attention instantly across digital and physical mediums.",
-    services: [
-      "High-Converting Promotional Posters",
-      "Event & Conference Keynotes Visuals",
-      "Premium Product Creatives",
-      "Social Media Campaign Graphics",
-      "Brand Storytelling Visuals"
+      "SEO & SEM Strategy",
+      "Email Marketing & Automation",
+      "Paid Media (PPC) Management",
+      "Conversion Rate Optimization",
+      "Marketing Funnel Analytics"
     ]
   }
 ];
@@ -401,6 +365,65 @@ export const pricingPlans: PricingPlan[] = [
       "Enterprise Level Security",
       "Continuous Dedicated Dev Sprints",
       "12 Months VIP Support"
+    ],
+    isPopular: false,
+    ctaText: "Contact for Quote"
+  }
+];
+
+export const webDevPricingPlans: PricingPlan[] = [
+  {
+    name: "Starter",
+    price: "₹7,000",
+    description: "Essential landing page design for startups wanting a fast, professional online presence.",
+    features: [
+      "Custom 1-Page Layout",
+      "Mobile Responsive Design",
+      "Basic SEO Setup",
+      "Contact Form Integration",
+      "Delivery in 5-7 Days"
+    ],
+    isPopular: false,
+    ctaText: "Choose Starter"
+  },
+  {
+    name: "Professional",
+    price: "₹12,000",
+    description: "Ideal for local businesses needing a multi-page website with a premium feel.",
+    features: [
+      "Up to 3 Custom Pages",
+      "Framer Motion Animations",
+      "Mobile & Tablet Optimized",
+      "Standard SEO & Schema Tags",
+      "Delivery in 7-10 Days"
+    ],
+    isPopular: false,
+    ctaText: "Choose Professional"
+  },
+  {
+    name: "Business",
+    price: "₹20,000",
+    description: "Best for growing brands requiring a comprehensive multi-page corporate website.",
+    features: [
+      "Up to 6 Custom Pages",
+      "Premium Animations & Interactions",
+      "Advanced SEO Optimization",
+      "CMS / Blog Setup",
+      "Delivery in 10-15 Days"
+    ],
+    isPopular: true,
+    ctaText: "Choose Business"
+  },
+  {
+    name: "Custom",
+    price: "Custom Quote",
+    description: "Bespoke enterprise-grade web applications tailored to specific operational needs.",
+    features: [
+      "Custom System Architecture",
+      "Next.js / React Application",
+      "Database & API Integrations",
+      "Admin Panel & Analytics",
+      "Dedicated Dev Sprints"
     ],
     isPopular: false,
     ctaText: "Contact for Quote"
