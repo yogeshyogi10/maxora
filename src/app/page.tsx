@@ -140,38 +140,55 @@ export default function HomePage() {
     }
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError("");
 
-    if (!contactName.trim()) {
-      setFormError("Please enter your name.");
-      return;
-    }
-    if (!contactEmail.trim() || !contactEmail.includes("@")) {
-      setFormError("Please enter a valid email address.");
-      return;
-    }
-    if (!contactPhone.trim() || contactPhone.length < 8) {
-      setFormError("Please enter a valid phone number.");
+    if (!contactName.trim() || !contactEmail.trim() || !contactPhone.trim()) {
+      setFormError("Please fill out all required fields.");
       return;
     }
 
-    setContactSubmitted(true);
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.6 },
-      colors: ["#B03DFF", "#D9B3FF", "#660F56", "#25D366"]
-    });
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "bb6a4b1d-9b24-4ea9-964a-6fbc1b9b99c4");
+      formData.append("subject", "New Inquiry from Maxora Home Page");
+      formData.append("Name", contactName);
+      formData.append("Email", contactEmail);
+      formData.append("Phone", contactPhone);
+      if (contactDesc.trim()) {
+        formData.append("Project Details", contactDesc);
+      }
 
-    setTimeout(() => {
-      setContactSubmitted(false);
-      setContactName("");
-      setContactEmail("");
-      setContactPhone("");
-      setContactDesc("");
-    }, 6000);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setContactSubmitted(true);
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ["#B03DFF", "#D9B3FF", "#660F56", "#25D366"]
+        });
+
+        setTimeout(() => {
+          setContactSubmitted(false);
+          setContactName("");
+          setContactEmail("");
+          setContactPhone("");
+          setContactDesc("");
+        }, 6000);
+      } else {
+        setFormError("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setFormError("An error occurred. Please check your connection.");
+    }
   };
 
   // Map icon strings for industries

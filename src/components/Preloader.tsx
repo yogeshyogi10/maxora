@@ -72,6 +72,7 @@ export default function Preloader() {
               src="/logo.png"
               alt="Maxora Logo"
               fill
+              sizes="(max-width: 768px) 256px, 384px"
               priority
               className="object-contain filter drop-shadow-[0_0_15px_rgba(176,61,255,0.4)]"
             />

@@ -26,38 +26,56 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
-    if (!name.trim()) {
-      setError("Please enter your name.");
-      return;
-    }
-    if (!email.trim() || !email.includes("@")) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-    if (!phone.trim() || phone.length < 8) {
-      setError("Please enter a valid phone number.");
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setError("Please fill out all required fields.");
       return;
     }
 
-    setSubmitted(true);
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.6 },
-      colors: ["#B03DFF", "#D9B3FF", "#660F56", "#25D366"]
-    });
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "bb6a4b1d-9b24-4ea9-964a-6fbc1b9b99c4");
+      formData.append("subject", "New Inquiry from Maxora Contact Page");
+      formData.append("Name", name);
+      formData.append("Email", email);
+      formData.append("Phone", phone);
+      formData.append("Business Segment", businessType);
+      if (description.trim()) {
+        formData.append("Project Details", description);
+      }
 
-    setTimeout(() => {
-      setSubmitted(false);
-      setName("");
-      setEmail("");
-      setPhone("");
-      setDescription("");
-    }, 6000);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ["#B03DFF", "#D9B3FF", "#660F56", "#25D366"]
+        });
+
+        setTimeout(() => {
+          setSubmitted(false);
+          setName("");
+          setEmail("");
+          setPhone("");
+          setDescription("");
+        }, 6000);
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please check your connection.");
+    }
   };
 
   return (
