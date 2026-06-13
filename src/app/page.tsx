@@ -122,21 +122,45 @@ export default function HomePage() {
     { title: "Growth & Support", desc: "Configuring SEO reports, managing weekly backups, and implementing lead-generation adjustments." }
   ];
 
-  const handleAuditSubmit = (e: React.FormEvent) => {
+  const handleAuditSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (auditName.trim() && auditEmail.trim()) {
-      setAuditSubmitted(true);
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.8 },
-        colors: ["#B03DFF", "#D9B3FF", "#660F56"]
-      });
-      setTimeout(() => {
-        setAuditSubmitted(false);
-        setAuditName("");
-        setAuditEmail("");
-      }, 6000);
+      try {
+        const formData = new FormData();
+        formData.append("access_key", "bb6a4b1d-9b24-4ea9-964a-6fbc1b9b99c4");
+        formData.append("subject", "New Free Audit Request from Maxora Website");
+        formData.append("Name", auditName);
+        formData.append("Email", auditEmail);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          setAuditSubmitted(true);
+          confetti({
+            particleCount: 100,
+            spread: 60,
+            origin: { y: 0.8 },
+            colors: ["#B03DFF", "#D9B3FF"]
+          });
+
+          setTimeout(() => {
+            setAuditSubmitted(false);
+            setAuditName("");
+            setAuditEmail("");
+          }, 5000);
+        } else {
+          alert("Failed to submit request. Please try again.");
+        }
+      } catch (err) {
+        alert("An error occurred. Please check your internet connection.");
+      }
+    } else {
+      alert("Please provide both your name and email.");
     }
   };
 
