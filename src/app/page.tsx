@@ -35,10 +35,12 @@ import {
 
 import HeroIllustration from "@/components/HeroIllustration";
 import CustomButton from "@/components/ui/CustomButton";
-import Card3D from "@/components/ui/Card3D";
-import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import ProjectShowcase from "@/components/ProjectShowcase";
-import Accordion from "@/components/ui/Accordion";
+import dynamic from "next/dynamic";
+
+const Card3D = dynamic(() => import("@/components/ui/Card3D"), { ssr: true });
+const AnimatedCounter = dynamic(() => import("@/components/ui/AnimatedCounter"), { ssr: false });
+const ProjectShowcase = dynamic(() => import("@/components/ProjectShowcase"), { ssr: true });
+const Accordion = dynamic(() => import("@/components/ui/Accordion"), { ssr: true });
 import {
   servicesData,
   projectsData,

@@ -31,6 +31,7 @@ export default function Footer() {
             <img
               src="/logo-icon.png"
               alt="Maxora"
+              loading="lazy"
               className="shrink-0 w-auto h-16 object-contain -mt-1 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(176,61,255,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(176,61,255,0.7)]"
             />
             <div className="flex flex-col text-left">
