@@ -28,6 +28,10 @@
     scroll-behavior: smooth;
   }
 
+  html {
+    background-color: var(--background);
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
@@ -233,5 +237,32 @@
   .group:hover .premium-logo-filter {
     filter: invert(1) hue-rotate(180deg) brightness(1.25) contrast(1.1) drop-shadow(0 0 10px rgba(176, 61, 255, 0.85));
     transform: scale(1.025);
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .text-shine-animated {
+    background: linear-gradient(
+      to right,
+      #ffffff 20%,
+      #D9B3FF 40%,
+      #B03DFF 50%,
+      #D9B3FF 60%,
+      #ffffff 80%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine-animation 5s linear infinite;
+  }
+
+  @keyframes shine-animation {
+    to {
+      background-position: 200% center;
+    }
   }
 }

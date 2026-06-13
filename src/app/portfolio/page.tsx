@@ -24,11 +24,11 @@ export default function PortfolioPage() {
           <span className="text-[10px] uppercase tracking-widest text-[#D9B3FF] font-semibold">Our Showcase</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold font-display text-white leading-tight">
-          Let\u0027s Engineer <br />
+          Let's Engineer <br />
           <span className="text-gradient-primary">Deployments</span>
         </h1>
         <p className="text-white/60 text-sm md:text-base font-light leading-relaxed mt-4">
-          Let\u0027s discuss how we can engineer a high-speed website, custom software build, or conversion-focused advertising framework to scale your operations.
+          Let's discuss how we can engineer a high-speed website, custom software build, or conversion-focused advertising framework to scale your operations.
         </p>
       </div>
 
@@ -58,7 +58,7 @@ export default function PortfolioPage() {
         </div>
       ) : (
         <div className="text-center py-20 border border-glass rounded-3xl bg-white/[0.01]">
-          <p className="text-white/50 text-sm font-light">No projects found in this category. Let\u0027s start one together!</p>
+          <p className="text-white/50 text-sm font-light">No projects found in this category. Let's start one together!</p>
         </div>
       )}
 

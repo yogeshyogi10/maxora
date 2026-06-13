@@ -90,21 +90,21 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-[#B03DFF] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-white/45 block">General Inquiries</span>
-                  <a href="mailto:hello@maxoratech.com" className="hover:text-white transition-colors">hello@maxoratech.com</a>
+                  <a href="mailto:maxoratechsolutions@gmail.com" className="hover:text-white transition-colors">maxoratechsolutions@gmail.com</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#B03DFF] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-white/45 block">Direct Helpline</span>
-                  <a href="tel:+919876543210" className="hover:text-white transition-colors">+91 98765 43210</a>
+                  <a href="tel:+919944163807" className="hover:text-white transition-colors">+91 99441 63807</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#B03DFF] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-white/45 block">Corporate Office</span>
-                  <span>Premium Corporate Suites, Mumbai, India</span>
+                  <span>Coimbatore,Tamilnadu,India</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -125,14 +125,8 @@ export default function ContactPage() {
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-white/5 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/10 text-white/60 hover:text-[#D9B3FF] transition-all" aria-label="Instagram">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-white/5 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/10 text-white/60 hover:text-[#D9B3FF] transition-all" aria-label="Facebook">
-                  <Facebook className="w-4 h-4" />
-                </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-white/5 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/10 text-white/60 hover:text-[#D9B3FF] transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4" />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-full border border-white/5 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/10 text-white/60 hover:text-[#D9B3FF] transition-all" aria-label="Twitter">
-                  <Twitter className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -183,7 +177,7 @@ export default function ContactPage() {
                     <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1.5 font-bold">Phone Number *</label>
                     <input
                       type="tel"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 99441 63807"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#B03DFF] focus:ring-1 focus:ring-[#B03DFF]"
@@ -205,30 +199,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-2 font-bold">Estimated Project Budget</label>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    {[
-                      "₹7,000 - ₹15,000",
-                      "₹15,000 - ₹30,000",
-                      "₹30,000 - ₹70,000",
-                      "Custom Quote"
-                    ].map((tier) => (
-                      <button
-                        key={tier}
-                        type="button"
-                        onClick={() => setBudget(tier)}
-                        className={`px-3 py-2 rounded-xl text-[10px] border font-semibold text-center transition-all cursor-pointer ${
-                          budget === tier 
-                            ? "border-[#B03DFF] bg-[#B03DFF]/10 text-white" 
-                            : "border-white/10 bg-white/5 text-white/50 hover:text-white/80"
-                        }`}
-                      >
-                        {tier}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+
 
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1.5 font-bold">Project Details</label>

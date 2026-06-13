@@ -91,11 +91,13 @@ export const servicesData: ServiceCategory[] = [
     iconName: "Palette",
     description: "Premium brand design, UI/UX, visual storytelling, and high‑impact graphics.",
     services: [
-      "Brand Identity & Guidelines",
-      "UI/UX Design & Prototyping",
-      "Graphic Design & Visual Assets",
-      "Motion Graphics & Animation",
-      "Presentation & Pitch Deck Design"
+      "Logo Design",
+      "Brand Guidliness",
+      "Business card Design",
+      "Brochure Design",
+      "Presentation & Pitch Deck Design",
+      "Posters & Banner Design"
+      
     ]
   },
   {
@@ -104,24 +106,27 @@ export const servicesData: ServiceCategory[] = [
     iconName: "Code2",
     description: "Custom, high‑performance websites and web applications built with modern frameworks.",
     services: [
-      "Next.js & React Apps",
-      "Static Site Generation (SSG)",
-      "CMS / Headless Integration",
-      "Performance Optimization",
-      "Responsive & Mobile‑First Design"
+      "Business & Portfolio",
+      "E-Commerce & Custom Web",
+      "Landing Page",
+      "Wordpress",
+      "Shopify Stores",
+      "Website Maintenance & Website Redesign",
+      "Website Speed Optimization",
+      "CMS integration"
     ]
   },
   {
     id: "smm",
-    title: "Social Media Management (SMM)",
+    title: "Social Media Marketing (SMM)",
     iconName: "Share2",
     description: "Strategic social presence, content creation, and community growth for premium brands.",
     services: [
-      "Content Calendar & Scheduling",
-      "Community Management & Engagement",
-      "Paid Social Ads & Campaigns",
-      "Analytics & Reporting",
-      "Influencer Partnerships"
+      "Social Media Management",
+      "Content Planning & Creation",
+      "Social Media Post Design",
+      "Hashtag Statergy",
+      "Intagram Growth Campigns"
     ]
   },
   {
@@ -130,16 +135,113 @@ export const servicesData: ServiceCategory[] = [
     iconName: "Megaphone",
     description: "Growth‑focused marketing across channels to drive leads and conversions.",
     services: [
-      "SEO & SEM Strategy",
-      "Email Marketing & Automation",
-      "Paid Media (PPC) Management",
-      "Conversion Rate Optimization",
-      "Marketing Funnel Analytics"
+      "SEO & Audits",
+      "On-page & Local SEO",
+      "Email Marketing",
+      "Keyword Research",
+      "Link Building",
+      "Google Business Profile",
+      "Google Ads & Meta Ads"
     ]
   }
 ];
 
 export const projectsData: Project[] = [
+  {
+    id: "11",
+    slug: "all-time-high",
+    name: "All Time High Apparel",
+    industry: "E-Commerce / Fashion",
+    tech: ["Shopify", "Liquid", "Tailwind CSS"],
+    result: "Elevated Brand Presence & Sales",
+    image: "url('/ath_thumbnail.png') center/cover no-repeat",
+    description: "A premium Shopify storefront tailored for an exclusive streetwear brand. Designed to handle high-traffic drop events with effortless style and seamless checkout performance.",
+    challenges: [
+      "Crafting an edgy, high-end urban aesthetic that resonates with sneakerheads.",
+      "Optimizing load speeds for high-resolution lookbook galleries."
+    ],
+    solutions: [
+      "Engineered a dynamic dark-mode theme utilizing custom Liquid components.",
+      "Implemented advanced lazy loading and optimized image delivery networks."
+    ],
+    liveUrl: "https://all-time-high-3962.myshopify.com/"
+  },
+  {
+    id: "10",
+    slug: "slate-corporate",
+    name: "Modern Corporate Solutions",
+    industry: "Business / Corporate",
+    tech: ["WordPress", "Elementor", "Tailwind CSS"],
+    result: "Seamless Corporate Web Presence",
+    image: "url('/slate_thumbnail.png') center/cover no-repeat",
+    description: "A sleek, responsive corporate platform developed on WordPress. The site combines sophisticated visual aesthetics with practical lead generation mechanics for a modern business.",
+    challenges: [
+      "Creating a unified corporate identity across multiple business verticals.",
+      "Integrating an intuitive content management workflow."
+    ],
+    solutions: [
+      "Deployed a custom lightweight WordPress architecture.",
+      "Utilized modern glassmorphism UI components for a premium feel."
+    ],
+    liveUrl: "https://slategrey-hummingbird-681132.hostingersite.com/"
+  },
+  {
+    id: "9",
+    slug: "nh-adventure",
+    name: "NH Adventure Expeditions",
+    industry: "Travel & Adventure",
+    tech: ["WordPress", "Custom PHP", "Tailwind CSS"],
+    result: "High-Performance Booking Portal",
+    image: "url('/nhadventure_thumbnail.png') center/cover no-repeat",
+    description: "A premium WordPress platform designed for an elite outdoor expedition brand. The site focuses on immersive, dramatic imagery and seamless booking integrations for luxury travelers.",
+    challenges: [
+      "Showcasing high-resolution expedition media without sacrificing load speed.",
+      "Building a custom, frictionless tour booking engine."
+    ],
+    solutions: [
+      "Engineered a customized WordPress theme integrated with Tailwind CSS.",
+      "Implemented intelligent caching and dynamic media loading."
+    ],
+    liveUrl: "https://nhadventure.com/"
+  },
+  {
+    id: "8",
+    slug: "lakfa-foods",
+    name: "Lakfa Foods",
+    industry: "E-Commerce / Food & Beverage",
+    tech: ["Shopify", "Liquid", "Tailwind CSS"],
+    result: "High-Converting Premium Storefront",
+    image: "url('/lakfa_thumbnail.png') center/cover no-repeat",
+    description: "A premium Shopify storefront designed for an artisanal tuna pickle brand. The focus was on translating gourmet quality into a fast, highly optimized shopping experience.",
+    challenges: [
+      "Presenting a single-niche product as a premium luxury item.",
+      "Optimizing the mobile checkout flow for higher conversions."
+    ],
+    solutions: [
+      "Implemented a dark-mode luxury aesthetic with high-end food typography.",
+      "Developed a custom slide-out cart drawer for frictionless purchasing."
+    ],
+    liveUrl: "https://lakfafoods.com/"
+  },
+  {
+    id: "7",
+    slug: "gym-dun-rho",
+    name: "Elite Fitness Center",
+    industry: "Health & Fitness",
+    tech: ["Next.js", "React", "Tailwind CSS"],
+    result: "High-Performance Digital Presence",
+    image: "url('/gym_thumbnail.png') center/cover no-repeat",
+    description: "A highly dynamic and visually striking fitness platform built for performance. Features a robust dark theme with aggressive energy to capture the elite gym demographic.",
+    challenges: [
+      "Crafting an aesthetic that matches high-intensity fitness.",
+      "Ensuring rapid load times for media-heavy pages."
+    ],
+    solutions: [
+      "Leveraged a modern dark UI with bold typography.",
+      "Optimized assets and deployed on edge infrastructure."
+    ],
+    liveUrl: "https://gym-dun-rho.vercel.app/"
+  },
   {
     id: "1",
     slug: "savory-elite",
@@ -158,106 +260,6 @@ export const projectsData: Project[] = [
       "Used SVG particle-based food dust and subtle parallaxes.",
       "Implemented next/image lazy loading with avif formats.",
       "Engineered an interactive 3D table selection system."
-    ]
-  },
-  {
-    id: "2",
-    slug: "aether-apparel",
-    name: "Aether Couture Store",
-    industry: "E-Commerce / Luxury Fashion",
-    tech: ["Shopify Plus", "React", "Liquid", "Tailwind CSS"],
-    result: "+38% Average Order Value & 4.2% Conversion Rate",
-    image: "linear-gradient(135deg, #0f002b 0%, #b03dff 100%)",
-    description: "A premium luxury streetwear and couture brand storefront, engineered on Shopify Plus. Featuring custom filtering, a high-converting cart drawer, and interactive 3D product rotators.",
-    challenges: [
-      "High friction in mobile checkout.",
-      "Standard Shopify templates failed to reflect luxury brand aesthetics.",
-      "Need for seamless product filtration."
-    ],
-    solutions: [
-      "Built a custom headless-style storefront shell.",
-      "Integrated slide-in visual drawers for rapid sizing and addition.",
-      "Designed complex custom collection page grids."
-    ]
-  },
-  {
-    id: "3",
-    slug: "cura-health",
-    name: "Cura Advanced Therapeutics",
-    industry: "Healthcare / BioTech",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    result: "+215% Patient Consultation Leads",
-    image: "linear-gradient(135deg, #001220 0%, #004e7c 100%)",
-    description: "An elite digital experience for a cutting-edge clinical therapeutics clinic, showcasing advanced therapies. Includes secure appointment booking portals and HIPAA-compliant interactive intake structures.",
-    challenges: [
-      "Displaying highly complex medical data in a readable manner.",
-      "Building user trust and authority.",
-      "Securing client intake forms."
-    ],
-    solutions: [
-      "Designed stylized medical diagrams utilizing interactive SVG maps.",
-      "Implemented trust signals, Doctor reviews, and certified credentials badges.",
-      "Created encrypted submission fields linked directly to clinic CRM."
-    ]
-  },
-  {
-    id: "4",
-    slug: "apex-holdings",
-    name: "Apex Global Capital",
-    industry: "Corporate / Private Equity",
-    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    result: "$1.2B Managed AUM Leads Captured",
-    image: "linear-gradient(135deg, #111 0%, #333 100%)",
-    description: "A highly sophisticated corporate landing page and portal for an elite private equity firm, showcasing portfolio assets, investment sectors, and corporate governance with high-end typography and smooth page transitions.",
-    challenges: [
-      "Firm requirements for ultimate performance and speed.",
-      "Reflecting institutional status while maintaining modern innovation.",
-      "Strict data privacy regulations."
-    ],
-    solutions: [
-      "Achieved 100% scores in Lighthouse metrics through static site pre-generation.",
-      "Designed a sleek monochrome theme with subtle neon accents.",
-      "Hosted on decentralized CDNs for maximum security and global speed."
-    ]
-  },
-  {
-    id: "5",
-    slug: "luxe-living",
-    name: "Luxe Living Estates",
-    industry: "Real Estate Development",
-    tech: ["WordPress", "Custom PHP", "Tailwind CSS", "GSAP"],
-    result: "85% Units Sold Pre-Construction",
-    image: "linear-gradient(135deg, #2b1f00 0%, #9c6c00 100%)",
-    description: "A bespoke project-specific marketing website for premium luxury villas in Spain. Includes 3D floor plan viewers, virtual tour embeds, and detailed neighborhood maps.",
-    challenges: [
-      "High asset size (videos, brochures, layouts).",
-      "Capturing high-net-worth real estate leads.",
-      "Displaying interactive apartment floor plans."
-    ],
-    solutions: [
-      "Implemented smart asset lazy loading with placeholder gradients.",
-      "Designed a premium white-glove VIP callback request widget.",
-      "Coded an interactive SVG building selector."
-    ]
-  },
-  {
-    id: "6",
-    slug: "nexus-academy",
-    name: "Nexus EduTech Portal",
-    industry: "Education / E-Learning",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    result: "10k+ Registered Active Students in 3 Months",
-    image: "linear-gradient(135deg, #002220 0%, #008f7a 100%)",
-    description: "An immersive e-learning academy for modern technology skills, including student dashboard, video player, coding challenges, and certificate generators.",
-    challenges: [
-      "Providing real-time progress indicators.",
-      "Dynamic interactive dashboard for courses.",
-      "Fast content rendering for remote students."
-    ],
-    solutions: [
-      "Built a state-driven course navigator.",
-      "Integrated lightweight course player framework.",
-      "Cached media indexes globally via CDN layer."
     ]
   }
 ];
@@ -307,64 +309,104 @@ export const whyChooseData: WhyChooseItem[] = [
 
 export const pricingPlans: PricingPlan[] = [
   {
-    name: "Starter Website",
-    price: "₹7,000",
-    description: "Perfect for startups and local businesses looking to establish a professional, high-end landing page presence.",
+    name: "Starter Digital Presence Package",
+    price: "₹8,000",
+    description: "For small businesses who want to start online",
     features: [
-      "Custom 1-Page Layout",
-      "Full Mobile Responsiveness",
-      "Basic SEO Setup",
-      "Contact Form Integration",
-      "1 Year Basic Support",
-      "Delivery in 5-7 Days"
+      "🎨 Design",
+      "8 Social Media Posts/month",
+      "4 Story Designs/month",
+      "Basic Promotional Creatives",
+      "Brand Template Setup",
+      "📱 Social Media Management",
+      "Instagram/Facebook Page Management",
+      "Content Calendar",
+      "Post Scheduling",
+      "Basic Caption Writing",
+      "Hashtag Research",
+      "📈 Digital Marketing",
+      "Google Business Profile Setup",
+      "Basic Competitor Research",
+      "Monthly Performance Summary",
+      "🤝 Suitable For:",
+      "Local shops, Small restaurants, Startups, Individual professionals"
     ],
     isPopular: false,
     ctaText: "Choose Starter"
   },
   {
-    name: "Business Website",
-    price: "₹20,000",
-    description: "Best for growing brands and corporate firms requiring a detailed multi-page showcase with rich animations.",
+    name: "Growth & Visibility Package",
+    price: "₹15,000",
+    description: "For businesses looking to increase engagement",
     features: [
-      "Up to 6 Custom Pages",
-      "Premium Framer Motion Animations",
-      "Advanced SEO & Schema Tags",
-      "Blog / Content Management",
-      "Lead Capture Integrations",
-      "Delivery in 10-15 Days",
-      "6 Months Premium Support"
+      "🎨 Design",
+      "15 Social Media Posts/month",
+      "8 Story Designs/month",
+      "Promotional Campaign Creatives",
+      "Festival/Event Creatives",
+      "📱 Social Media Management",
+      "Complete Account Handling",
+      "Content Strategy",
+      "Caption Writing",
+      "Audience Engagement",
+      "Monthly Analytics Report",
+      "📈 Digital Marketing",
+      "Basic SEO Optimization",
+      "Google Business Optimization",
+      "Meta Ads Setup",
+      "Marketing Strategy",
+      "🤝 Suitable For:",
+      "Growing businesses, Service providers, E-commerce brands"
     ],
     isPopular: true,
-    ctaText: "Choose Business"
+    ctaText: "Choose Growth"
   },
   {
-    name: "Shopify Store",
-    price: "₹15,000",
-    description: "Engineered for retail brands aiming to launch a highly optimized, conversion-focused e-commerce storefront.",
+    name: "Business Growth Package",
+    price: "₹30,000",
+    description: "For businesses focused on leads and growth",
     features: [
-      "Custom Theme Setup & Liquid Edits",
-      "Up to 50 Products Configured",
-      "Cart Drawer & Checkout Optimize",
-      "Payment Gateway Integration",
-      "Standard E-Commerce SEO",
-      "Delivery in 10-14 Days",
-      "3 Months Complete Support"
+      "🎨 Design",
+      "25 Social Media Posts/month",
+      "Reel Covers",
+      "Ad Creatives",
+      "Branding Support",
+      "📱 Social Media Management",
+      "Full Social Media Management",
+      "Advanced Content Planning",
+      "Community Management",
+      "Trend-Based Content Strategy",
+      "📈 Digital Marketing",
+      "Meta Ads Management",
+      "Google Ads Setup & Monitoring",
+      "SEO Improvement Plan",
+      "Lead Generation Strategy",
+      "Detailed Monthly Report",
+      "🤝 Suitable For:",
+      "Established local brands, Real estate, Restaurants, Service companies"
     ],
     isPopular: false,
-    ctaText: "Choose Shopify"
+    ctaText: "Choose Business Growth"
   },
   {
-    name: "Custom Application",
+    name: "Custom Enterprise Plan",
     price: "Custom Quote",
-    description: "Enterprise-grade bespoke software solutions tailored exactly to your unique business operational workflows.",
+    description: "Bespoke digital marketing and design solutions for specific needs",
     features: [
-      "Bespoke System Architecture",
-      "Next.js / React Web Application",
-      "Admin Panel & Analytics Dashboard",
-      "Database & Custom API Integrations",
-      "Enterprise Level Security",
-      "Continuous Dedicated Dev Sprints",
-      "12 Months VIP Support"
+      "🎨 Design",
+      "Unlimited Graphic Creatives",
+      "Custom Video Editing & Reels",
+      "Complete Brand Identity",
+      "📱 Social Media Management",
+      "Multi-platform Management",
+      "Daily Content Publishing",
+      "24/7 Community Management",
+      "📈 Digital Marketing",
+      "Enterprise SEO Strategy",
+      "High-Budget Ad Campaigns",
+      "Advanced Lead Generation",
+      "🤝 Suitable For:",
+      "Large corporations, Scaling agencies, Global e-commerce"
     ],
     isPopular: false,
     ctaText: "Contact for Quote"
@@ -373,57 +415,112 @@ export const pricingPlans: PricingPlan[] = [
 
 export const webDevPricingPlans: PricingPlan[] = [
   {
-    name: "Starter",
-    price: "₹7,000",
-    description: "Essential landing page design for startups wanting a fast, professional online presence.",
+    name: "🚀 Basic Website Package",
+    price: "₹10,000",
+    description: "For small businesses and individuals who need a professional online presence",
     features: [
-      "Custom 1-Page Layout",
-      "Mobile Responsive Design",
-      "Basic SEO Setup",
+      "⚙️ Features:",
+      "4–5 Website Pages",
+      "Responsive Website Design",
+      "Clean & Professional UI Design",
+      "Business Information Sections",
       "Contact Form Integration",
-      "Delivery in 5-7 Days"
+      "WhatsApp Chat Integration",
+      "Google Map Integration",
+      "Social Media Links Integration",
+      "Basic SEO-Friendly Setup",
+      "Deployment Assistance",
+      "⏱️ Delivery Time:",
+      "4–5 Working Days",
+      "🛠️ Support:",
+      "15 Days Free Support",
+      "🤝 Suitable For:",
+      "Small businesses, Freelancers, Personal brands, Local service providers"
     ],
     isPopular: false,
-    ctaText: "Choose Starter"
+    ctaText: "Choose Basic"
   },
   {
-    name: "Professional",
-    price: "₹12,000",
-    description: "Ideal for local businesses needing a multi-page website with a premium feel.",
+    name: "📈 Standard Website Package",
+    price: "₹18,000",
+    description: "For businesses looking for a complete professional website",
     features: [
-      "Up to 3 Custom Pages",
-      "Framer Motion Animations",
-      "Mobile & Tablet Optimized",
-      "Standard SEO & Schema Tags",
-      "Delivery in 7-10 Days"
-    ],
-    isPopular: false,
-    ctaText: "Choose Professional"
-  },
-  {
-    name: "Business",
-    price: "₹20,000",
-    description: "Best for growing brands requiring a comprehensive multi-page corporate website.",
-    features: [
-      "Up to 6 Custom Pages",
-      "Premium Animations & Interactions",
-      "Advanced SEO Optimization",
-      "CMS / Blog Setup",
-      "Delivery in 10-15 Days"
+      "⚙️ Features:",
+      "7–8 Website Pages",
+      "Custom UI Design",
+      "Fully Responsive Development",
+      "Service/Product Showcase",
+      "Inquiry Form Integration",
+      "WhatsApp Business Integration",
+      "Google Map Integration",
+      "Social Media Integration",
+      "Basic On-Page SEO Setup",
+      "Website Speed Optimization",
+      "Google Analytics Integration",
+      "Deployment Assistance",
+      "⏱️ Delivery Time:",
+      "7–10 Working Days",
+      "🛠️ Support:",
+      "30 Days Free Support",
+      "🤝 Suitable For:",
+      "Growing businesses, Startups, Service companies, Professional brands"
     ],
     isPopular: true,
-    ctaText: "Choose Business"
+    ctaText: "Choose Standard"
   },
   {
-    name: "Custom",
-    price: "Custom Quote",
-    description: "Bespoke enterprise-grade web applications tailored to specific operational needs.",
+    name: "🔥 Premium Website Package",
+    price: "₹25,000",
+    description: "For businesses requiring a stronger digital presence",
     features: [
-      "Custom System Architecture",
-      "Next.js / React Application",
-      "Database & API Integrations",
-      "Admin Panel & Analytics",
-      "Dedicated Dev Sprints"
+      "⚙️ Features:",
+      "9–10 Website Pages",
+      "Premium UI/UX Design",
+      "Advanced Responsive Layout",
+      "Modern Animations & Interactive Sections",
+      "Blog Section Integration",
+      "Advanced Contact Forms",
+      "Lead Generation Setup",
+      "Google Analytics & Search Console Setup",
+      "SEO-Friendly Structure",
+      "Performance Optimization",
+      "Security Configuration",
+      "Content Management Support",
+      "Deployment Assistance",
+      "⏱️ Delivery Time:",
+      "10–15 Working Days",
+      "🛠️ Support:",
+      "3 Months Free Support",
+      "🤝 Suitable For:",
+      "Established businesses, Brands, Agencies, Companies focusing on growth"
+    ],
+    isPopular: false,
+    ctaText: "Choose Premium"
+  },
+  {
+    name: "🏢 Custom Website Package",
+    price: "Custom Quote",
+    description: "For businesses requiring advanced features and custom solutions",
+    features: [
+      "⚙️ Features:",
+      "Custom UI/UX Design",
+      "10+ Pages / Unlimited Pages",
+      "Custom Functionalities",
+      "Admin Dashboard",
+      "User Login System",
+      "Database Integration",
+      "API Integration",
+      "Payment Gateway Integration",
+      "E-commerce Features",
+      "CRM/ERP Integration",
+      "Advanced Animations",
+      "Custom Business Requirements",
+      "⏱️ Delivery Time:",
+      "Based on Project Scope",
+      "🛠️ Support:",
+      "Custom Support Plans",
+      "🤝 Suitable For:",
+      "Enterprises, Large Agencies, Complex SaaS platforms"
     ],
     isPopular: false,
     ctaText: "Contact for Quote"
@@ -467,7 +564,7 @@ export const blogData: BlogItem[] = [
     date: "Jun 02, 2026",
     readTime: "5 min read",
     category: "Design Trends",
-    image: "linear-gradient(135deg, #1f0117 0%, #4c0840 100%)"
+    image: "url('/blog_design.png') center/cover no-repeat"
   },
   {
     id: "b2",
@@ -478,7 +575,7 @@ export const blogData: BlogItem[] = [
     date: "May 28, 2026",
     readTime: "7 min read",
     category: "Development",
-    image: "linear-gradient(135deg, #020b1c 0%, #15418b 100%)"
+    image: "url('/blog_nextjs.png') center/cover no-repeat"
   },
   {
     id: "b3",
@@ -489,6 +586,6 @@ export const blogData: BlogItem[] = [
     date: "May 15, 2026",
     readTime: "6 min read",
     category: "E-Commerce",
-    image: "linear-gradient(135deg, #091a0c 0%, #1c5225 100%)"
+    image: "url('/blog_shopify.png') center/cover no-repeat"
   }
 ];

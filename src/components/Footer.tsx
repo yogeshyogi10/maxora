@@ -49,14 +49,8 @@ export default function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#D9B3FF] transition-colors p-2.5 bg-white/5 rounded-full border border-white/5 hover:bg-[#B03DFF]/10 hover:border-[#B03DFF]/20" aria-label="Instagram">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#D9B3FF] transition-colors p-2.5 bg-white/5 rounded-full border border-white/5 hover:bg-[#B03DFF]/10 hover:border-[#B03DFF]/20" aria-label="Facebook">
-              <Facebook className="w-4 h-4" />
-            </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#D9B3FF] transition-colors p-2.5 bg-white/5 rounded-full border border-white/5 hover:bg-[#B03DFF]/10 hover:border-[#B03DFF]/20" aria-label="LinkedIn">
               <Linkedin className="w-4 h-4" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#D9B3FF] transition-colors p-2.5 bg-white/5 rounded-full border border-white/5 hover:bg-[#B03DFF]/10 hover:border-[#B03DFF]/20" aria-label="Twitter">
-              <Twitter className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -90,7 +84,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5 text-sm text-white/60 font-light">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#B03DFF] flex-shrink-0" />
-                <a href="mailto:hello@maxoratech.com" className="hover:text-white transition-colors break-all">maxoratechsolutions@gmail.com</a>
+                <a href="mailto:maxoratechsolutions@gmail.com" className="hover:text-white transition-colors break-all">maxoratechsolutions@gmail.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#B03DFF] flex-shrink-0" />

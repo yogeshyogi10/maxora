@@ -30,15 +30,15 @@ export default function AboutPage() {
   ];
 
   const milestones = [
-    { year: "2023", title: "Foundation in Mumbai", desc: "Maxora Tech Solutions was established as a boutique team of 3 elite full-stack specialists." },
-    { year: "2024", title: "First 15 Enterprise Systems", desc: "Delivered customized high-conversion platforms for e-commerce and biotech startups." },
-    { year: "2025", title: "Next.js & Shopify Plus Migration", desc: "Standardized all engineering pipelines onto headless architectures to increase speed." },
-    { year: "2026", title: "Awwwards Grade Agency", desc: "Positioned as a premier luxury-grade agency serving international brands." }
+    { year: "Early 2025", title: "The Freelance Spark", desc: "Began the journey as an independent developer, mastering web fundamentals and modern frameworks." },
+    { year: "Mid 2025", title: "First Client Successes", desc: "Delivered high-performance websites for local businesses, establishing a track record for speed and reliability." },
+    { year: "Early 2026", title: "Elevating the Aesthetic", desc: "Shifted focus towards luxury web design, integrating Next.js and advanced animations for premium brands." },
+    { year: "Late 2026", title: "Maxora Tech Solutions", desc: "Officially launched as a specialized freelance agency in Coimbatore, ready to scale operations globally." }
   ];
 
   return (
     <div className="py-12 md:py-20 relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-      
+
       {/* Banner */}
       <div className="text-center max-w-3xl mx-auto mb-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit mb-4">
@@ -62,7 +62,7 @@ export default function AboutPage() {
             Speed is a Status Symbol. <br />Design is a Differentiator.
           </h2>
           <p className="text-white/70 text-sm font-light leading-relaxed">
-            At Maxora, we believe a brand\u0027s website is their primary digital real estate. Simple template solutions dilute authority. We construct bespoke digital assets from scratch using high-speed rendering frameworks, customized server layouts, and elegant animations.
+            At Maxora, we believe a brand's website is their primary digital real estate. Simple template solutions dilute authority. We construct bespoke digital assets from scratch using high-speed rendering frameworks, customized server layouts, and elegant animations.
           </p>
           <p className="text-white/70 text-sm font-light leading-relaxed">
             Whether we are writing a custom headless WooCommerce configuration or organizing social media layouts, we deliver performance that ranks and design that converts.

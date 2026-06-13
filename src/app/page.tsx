@@ -51,27 +51,27 @@ import {
 const testimonials = [
   {
     id: "t1",
-    name: "Aarav Sharma",
+    name: "Hari Vignesh",
     role: "Founder",
-    company: "Savory Fine Dining",
+    company: "Cresendra",
     rating: 5,
     review: "Maxora transformed our digital presence completely. The new website has double our reservations and loading speed is instantaneous. Elite service!",
     avatar: "AS"
   },
   {
     id: "t2",
-    name: "Vikram Malhotra",
-    role: "CEO",
-    company: "Apex Global Capital",
-    rating: 5,
+    name: "Arun Dev",
+    role: "Senior Digital Marketer",
+    company: "Infratech",
+    rating: 4,
     review: "Enterprise design quality, clean TypeScript architecture, and top-tier animations. They operate at the highest level of professionalism.",
     avatar: "VM"
   },
   {
     id: "t3",
-    name: "Neha Goel",
-    role: "Marketing Director",
-    company: "Aether Couture Store",
+    name: "Aadhithya",
+    role: "Operational Manager",
+    company: "Akhil Restaurant",
     rating: 5,
     review: "Our Shopify conversion rate went from 1.8% to 4.2% in weeks after launch. Their conversion-driven layouts are scientifically designed.",
     avatar: "NG"
@@ -243,9 +243,9 @@ export default function HomePage() {
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Luxury Digital Craftsmanship</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-display leading-tight text-white">
               Crafting Digital <br />
-              <span className="text-gradient-primary">Experiences</span> <br />
+              <span className="text-shine-animated">Experiences</span> <br />
               That Drive Growth.
             </h1>
 
@@ -459,7 +459,6 @@ export default function HomePage() {
 
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Operational Sprints</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Our Luxury Engineering Journey</h2>
             <p className="text-white/60 text-xs md:text-sm font-light mt-3">
               We align design precision with clean sprint guidelines to secure success.
             </p>
@@ -546,7 +545,7 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {projectsData.map((project) => (
+            {projectsData.slice(0, 6).map((project) => (
               <motion.div key={project.id} variants={fadeInUp}>
                 <ProjectShowcase project={project} />
               </motion.div>
@@ -643,13 +642,20 @@ export default function HomePage() {
                   <hr className="border-white/5 my-4" />
 
                   {/* Features */}
-                  <ul className="flex flex-col gap-3">
-                    {plan.features.map((feat, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
+                  <ul className="flex flex-col gap-2.5">
+                    {plan.features.map((feat, fidx) => {
+                      const isHeader = ["🎨", "📱", "📈", "🤝", "⚙️", "⏱️", "🛠️"].some(emoji => feat.startsWith(emoji));
+                      return isHeader ? (
+                        <li key={fidx} className={`text-[13px] font-bold text-white mt-2 mb-0.5 ${fidx !== 0 ? 'border-t border-white/5 pt-3' : ''}`}>
+                          {feat}
+                        </li>
+                      ) : (
+                        <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
+                          <span>{feat}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 
@@ -716,13 +722,20 @@ export default function HomePage() {
                   <hr className="border-white/5 my-4" />
 
                   {/* Features */}
-                  <ul className="flex flex-col gap-3">
-                    {plan.features.map((feat, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
+                  <ul className="flex flex-col gap-2.5">
+                    {plan.features.map((feat, fidx) => {
+                      const isHeader = ["🎨", "📱", "📈", "🤝", "⚙️", "⏱️", "🛠️"].some(emoji => feat.startsWith(emoji));
+                      return isHeader ? (
+                        <li key={fidx} className={`text-[13px] font-bold text-white mt-2 mb-0.5 ${fidx !== 0 ? 'border-t border-white/5 pt-3' : ''}`}>
+                          {feat}
+                        </li>
+                      ) : (
+                        <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
+                          <span>{feat}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 
@@ -789,22 +802,22 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex gap-2">
-                                      <button
-                  suppressHydrationWarning={true}
-                  onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                  className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
-                  aria-label="Previous Review"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  suppressHydrationWarning={true}
-                  onClick={() => setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                  className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
-                  aria-label="Next Review"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+                      <button
+                        suppressHydrationWarning={true}
+                        onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                        className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
+                        aria-label="Previous Review"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <button
+                        suppressHydrationWarning={true}
+                        onClick={() => setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                        className="p-2 border border-glass bg-white/5 rounded-full hover:bg-white/10 text-white cursor-pointer transition-colors"
+                        aria-label="Next Review"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -982,7 +995,7 @@ export default function HomePage() {
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Phone Number *</label>
                       <input
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 99441 63807"
                         value={contactPhone}
                         onChange={(e) => setContactPhone(e.target.value)}
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#B03DFF] focus:ring-1 focus:ring-[#B03DFF]"
@@ -1004,29 +1017,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1.5 font-semibold">Estimated Project Budget</label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {[
-                        "₹7,000 - ₹15,000",
-                        "₹15,000 - ₹30,000",
-                        "₹30,000 - ₹70,000",
-                        "Custom Quote"
-                      ].map((tier) => (
-                        <button
-                          key={tier}
-                          type="button"
-                          onClick={() => setContactBudget(tier)}
-                          className={`px-3 py-2 rounded-xl text-[10px] border font-medium text-center transition-all cursor-pointer ${contactBudget === tier
-                            ? "border-[#B03DFF] bg-[#B03DFF]/10 text-white"
-                            : "border-white/10 bg-white/5 text-white/50 hover:text-white/80"
-                            }`}
-                        >
-                          {tier}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+
 
                   <div>
                     <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Project Scope & Details</label>

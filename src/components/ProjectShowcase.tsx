@@ -96,6 +96,12 @@ export default function ProjectShowcase({ project }: ProjectShowcaseProps) {
             </span>
           ))}
         </div>
+        
+        {project.liveUrl && (
+          <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-white hover:text-[#D9B3FF] transition-colors mt-2 font-bold w-fit z-20">
+            View Live Site <ArrowUpRight className="w-3.5 h-3.5" />
+          </Link>
+        )}
       </div>
     </Card3D>
   );

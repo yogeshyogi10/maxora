@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AuroraBg from "@/components/ui/AuroraBg";
 import ParticleSystem from "@/components/ui/ParticleSystem";
+import Preloader from "@/components/Preloader";
 
 export const metadata: Metadata = {
   title: {
@@ -85,6 +86,7 @@ export default function RootLayout({
       className={`h-full scroll-smooth ${inter.variable} ${bellefair.variable}`}
     >
       <body className="bg-background text-foreground min-h-screen flex flex-col font-sans selection:bg-[#B03DFF]/30 selection:text-[#D9B3FF] relative">
+        <Preloader />
         <AuroraBg />
         <ParticleSystem />
         <Navbar />
