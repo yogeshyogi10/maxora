@@ -148,6 +148,25 @@ export const servicesData: ServiceCategory[] = [
 
 export const projectsData: Project[] = [
   {
+    id: "12",
+    slug: "veloura",
+    name: "Veloura",
+    industry: "Premium Brand",
+    tech: ["Next.js", "React", "Tailwind CSS"],
+    result: "Elevated Digital Experience",
+    image: "url('/veloura_thumbnail.png') center/cover no-repeat",
+    description: "A premium and highly interactive digital presence built for Veloura. Focuses on smooth animations, dynamic user experience, and modern luxury aesthetics.",
+    challenges: [
+      "Creating an immersive and luxurious user journey.",
+      "Optimizing advanced animations for cross-device performance."
+    ],
+    solutions: [
+      "Leveraged modern frontend frameworks for buttery-smooth page transitions.",
+      "Engineered a highly responsive and custom UI with Tailwind CSS."
+    ],
+    liveUrl: "https://veloura-vert-theta.vercel.app/"
+  },
+  {
     id: "11",
     slug: "all-time-high",
     name: "All Time High Apparel",

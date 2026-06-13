@@ -15,6 +15,7 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
   return (
     <div className="border border-glass bg-[#0d0724]/40 rounded-2xl overflow-hidden mb-4 transition-all duration-300 hover:border-[#B03DFF]/30">
       <button
+        suppressHydrationWarning={true}
         onClick={onToggle}
         className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer"
         aria-expanded={isOpen}
