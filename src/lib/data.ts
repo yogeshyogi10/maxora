@@ -205,25 +205,6 @@ export const projectsData: Project[] = [
     liveUrl: "https://nhadventure.com/"
   },
   {
-    id: "8",
-    slug: "lakfa-foods",
-    name: "Lakfa Foods",
-    industry: "E-Commerce / Food & Beverage",
-    tech: ["Shopify", "Liquid", "Tailwind CSS"],
-    result: "High-Converting Premium Storefront",
-    image: "url('/lakfa_thumbnail.png') center/cover no-repeat",
-    description: "A premium Shopify storefront designed for an artisanal tuna pickle brand. The focus was on translating gourmet quality into a fast, highly optimized shopping experience.",
-    challenges: [
-      "Presenting a single-niche product as a premium luxury item.",
-      "Optimizing the mobile checkout flow for higher conversions."
-    ],
-    solutions: [
-      "Implemented a dark-mode luxury aesthetic with high-end food typography.",
-      "Developed a custom slide-out cart drawer for frictionless purchasing."
-    ],
-    liveUrl: "https://lakfafoods.com/"
-  },
-  {
     id: "7",
     slug: "gym-dun-rho",
     name: "Elite Fitness Center",
