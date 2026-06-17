@@ -638,163 +638,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. PRICING SECTION (Grid Reveal) */}
+      {/* 8. PRICE QUOTE SECTION */}
       <section className="py-24 border-y border-white/5 bg-[#050014]/40 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Transparent Pricing</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Plans Fit For Your Ambition</h2>
-            <p className="text-white/60 text-xs md:text-sm font-light mt-3">
-              No hidden fees, flat rates, and clear contract limits.
-            </p>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
-          >
-            {pricingPlans.map((plan, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeInUp}
-                className={`relative rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 ${plan.isPopular
-                  ? "border-[#B03DFF] bg-[#B03DFF]/5 shadow-[0_0_30px_rgba(176,61,255,0.15)] md:scale-105"
-                  : "border-glass bg-white/[0.01] hover:border-[#B03DFF]/20"
-                  }`}
-              >
-                {plan.isPopular && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#B03DFF] text-white text-[9px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full border border-white/20 shadow-md">
-                    Most Popular
-                  </span>
-                )}
-
-                <div>
-                  <h3 className="text-white font-extrabold text-lg mt-2">{plan.name}</h3>
-                  <p className="text-white/50 text-xs mt-1.5 font-light min-h-[40px] leading-relaxed">{plan.description}</p>
-
-                  {/* Price */}
-                  <div className="mt-4 mb-6">
-                    <span className="text-3xl font-extrabold font-display text-white">{plan.price}</span>
-                    {plan.price !== "Custom Quote" && <span className="text-white/40 text-xs font-light"> onwards</span>}
-                  </div>
-
-                  <hr className="border-white/5 my-4" />
-
-                  {/* Features */}
-                  <ul className="flex flex-col gap-2.5">
-                    {plan.features.map((feat, fidx) => {
-                      const isHeader = ["🎨", "📱", "📈", "🤝", "⚙️", "⏱️", "🛠️"].some(emoji => feat.startsWith(emoji));
-                      return isHeader ? (
-                        <li key={fidx} className={`text-[13px] font-bold text-white mt-2 mb-0.5 ${fidx !== 0 ? 'border-t border-white/5 pt-3' : ''}`}>
-                          {feat}
-                        </li>
-                      ) : (
-                        <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                <div className="mt-8">
-                  <CustomButton
-                    href="#contact"
-                    variant={plan.isPopular ? "primary" : "outline"}
-                    className="w-full text-center text-xs py-3"
-                  >
-                    {plan.ctaText}
-                  </CustomButton>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* 8b. WEBSITE DEVELOPMENT PRICING SECTION (Grid Reveal) */}
-      <section className="py-24 border-b border-white/5 bg-[#050014]/50 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Website Development Pricing</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Dedicated Web Solutions</h2>
-            <p className="text-white/60 text-xs md:text-sm font-light mt-3">
-              From landing pages to complex corporate systems.
-            </p>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
-          >
-            {webDevPricingPlans.map((plan, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeInUp}
-                className={`relative rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 ${plan.isPopular
-                  ? "border-[#B03DFF] bg-[#B03DFF]/5 shadow-[0_0_30px_rgba(176,61,255,0.15)] md:scale-105"
-                  : "border-glass bg-white/[0.01] hover:border-[#B03DFF]/20"
-                  }`}
-              >
-                {plan.isPopular && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#B03DFF] text-white text-[9px] uppercase tracking-widest font-extrabold px-3 py-1 rounded-full border border-white/20 shadow-md">
-                    Most Popular
-                  </span>
-                )}
-
-                <div>
-                  <h3 className="text-white font-extrabold text-lg mt-2">{plan.name}</h3>
-                  <p className="text-white/50 text-xs mt-1.5 font-light min-h-[40px] leading-relaxed">{plan.description}</p>
-
-                  {/* Price */}
-                  <div className="mt-4 mb-6">
-                    <span className="text-3xl font-extrabold font-display text-white">{plan.price}</span>
-                    {plan.price !== "Custom Quote" && <span className="text-white/40 text-xs font-light"> onwards</span>}
-                  </div>
-
-                  <hr className="border-white/5 my-4" />
-
-                  {/* Features */}
-                  <ul className="flex flex-col gap-2.5">
-                    {plan.features.map((feat, fidx) => {
-                      const isHeader = ["🎨", "📱", "📈", "🤝", "⚙️", "⏱️", "🛠️"].some(emoji => feat.startsWith(emoji));
-                      return isHeader ? (
-                        <li key={fidx} className={`text-[13px] font-bold text-white mt-2 mb-0.5 ${fidx !== 0 ? 'border-t border-white/5 pt-3' : ''}`}>
-                          {feat}
-                        </li>
-                      ) : (
-                        <li key={fidx} className="flex items-start gap-2.5 text-xs text-white/70 font-light">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B3FF] mt-0.5 flex-shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                <div className="mt-8">
-                  <CustomButton
-                    href="#contact"
-                    variant={plan.isPopular ? "primary" : "outline"}
-                    className="w-full text-center text-xs py-3"
-                  >
-                    {plan.ctaText}
-                  </CustomButton>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Custom Pricing</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Get a Custom Quote</h2>
+          <p className="text-white/60 text-sm font-light mt-4 mb-8 leading-relaxed max-w-2xl mx-auto">
+            Every project is unique. We provide tailored solutions to match your specific business goals and technical requirements. Drop us a message with your project details, and our team will get back to you with a comprehensive quote.
+          </p>
+          <CustomButton href="#contact" variant="primary" size="lg">
+            Request a Quote
+          </CustomButton>
         </div>
       </section>
 
@@ -915,6 +769,7 @@ export default function HomePage() {
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-medium">Your Name</label>
                       <input
+                        suppressHydrationWarning
                         type="text"
                         required
                         placeholder="John Doe"
@@ -926,6 +781,7 @@ export default function HomePage() {
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-medium">Your Email</label>
                       <input
+                        suppressHydrationWarning
                         type="email"
                         required
                         placeholder="john@company.com"
@@ -935,6 +791,7 @@ export default function HomePage() {
                       />
                     </div>
                     <button
+                      suppressHydrationWarning
                       type="submit"
                       className="w-full bg-[#B03DFF] hover:bg-[#D9B3FF] text-white hover:text-black font-semibold text-xs py-3 rounded-full uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer"
                     >
@@ -1014,6 +871,7 @@ export default function HomePage() {
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Your Name *</label>
                       <input
+                        suppressHydrationWarning
                         type="text"
                         placeholder="John Doe"
                         value={contactName}
@@ -1024,6 +882,7 @@ export default function HomePage() {
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Your Email *</label>
                       <input
+                        suppressHydrationWarning
                         type="email"
                         placeholder="john@company.com"
                         value={contactEmail}
@@ -1037,6 +896,7 @@ export default function HomePage() {
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Phone Number *</label>
                       <input
+                        suppressHydrationWarning
                         type="tel"
                         placeholder="+91 99441 63807"
                         value={contactPhone}
@@ -1047,6 +907,7 @@ export default function HomePage() {
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Business Type</label>
                       <select
+                        suppressHydrationWarning
                         value={contactBusiness}
                         onChange={(e) => setContactBusiness(e.target.value)}
                         className="w-full bg-[#050014] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#B03DFF] cursor-pointer"
@@ -1065,6 +926,7 @@ export default function HomePage() {
                   <div>
                     <label className="block text-[10px] uppercase tracking-wider text-white/50 mb-1 font-semibold">Project Scope & Details</label>
                     <textarea
+                      suppressHydrationWarning
                       rows={4}
                       placeholder="Please summarize page structures, requirements, specific design choices, reference links..."
                       value={contactDesc}
@@ -1074,6 +936,7 @@ export default function HomePage() {
                   </div>
 
                   <button
+                    suppressHydrationWarning
                     type="submit"
                     className="w-full bg-[#B03DFF] hover:bg-[#D9B3FF] text-white hover:text-black font-semibold text-xs py-3.5 rounded-full uppercase tracking-widest transition-all duration-300 shadow-md cursor-pointer"
                   >
