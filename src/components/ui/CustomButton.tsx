@@ -68,6 +68,7 @@ export default function CustomButton({
     return (
       <Link 
         href={href} 
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={cn(baseStyles, variants[variant], sizes[size], className)}
