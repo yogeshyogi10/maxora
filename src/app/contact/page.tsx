@@ -87,7 +87,7 @@ export default function ContactPage() {
           <Sparkles className="w-3.5 h-3.5 text-[#D9B3FF]" />
           <span className="text-[10px] uppercase tracking-widest text-[#D9B3FF] font-semibold">Consultation Suite</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold font-display text-white leading-tight">
+        <h1 className="text-4xl md:text-5xl font-normal font-display text-white leading-tight">
           Let's Engineer <br />
           <span className="text-gradient-primary">Digital Prestige</span>
         </h1>
@@ -101,7 +101,7 @@ export default function ContactPage() {
         {/* Contact Info Sidebar (Left) */}
         <div className="lg:col-span-5 flex flex-col gap-8">
           <div className="p-8 rounded-3xl border border-glass bg-[#0d0724]/40 flex flex-col gap-6">
-            <h3 className="text-white font-bold text-xs uppercase tracking-widest border-l-2 border-[#B03DFF] pl-3">Agency Details</h3>
+            <h3 className="text-white font-normal text-xs uppercase tracking-widest border-l-2 border-[#B03DFF] pl-3">Agency Details</h3>
             
             <ul className="flex flex-col gap-5 text-sm text-white/70 font-light">
               <li className="flex items-start gap-3">
@@ -247,7 +247,7 @@ export default function ContactPage() {
                 <div className="w-16 h-16 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/20">
                   <CheckCircle2 className="w-8 h-8 text-[#25D366]" />
                 </div>
-                <h3 className="text-white font-extrabold text-xl font-display">Inquiry Registered!</h3>
+                <h3 className="text-white font-normal text-xl font-display">Inquiry Registered!</h3>
                 <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed max-w-[340px]">
                   Hi <span className="font-semibold text-white">{name}</span>, your request has been logged. Our technology strategists will contact you at <span className="font-semibold text-white">{email}</span> inside 12 hours.
                 </p>

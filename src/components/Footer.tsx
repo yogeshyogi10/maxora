@@ -35,7 +35,7 @@ export default function Footer() {
               className="shrink-0 w-auto h-16 object-contain -mt-1 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(176,61,255,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(176,61,255,0.7)]"
             />
             <div className="flex flex-col text-left">
-              <span className="text-white font-extrabold text-2xl tracking-wider font-display leading-none group-hover:text-[#D9B3FF] transition-colors duration-300">
+              <span className="text-white font-normal text-2xl tracking-wider font-display leading-none group-hover:text-[#D9B3FF] transition-colors duration-300">
                 MAXORA
               </span>
               <span className="text-white/60 text-[10px] uppercase tracking-[0.25em] font-light mt-1 leading-none group-hover:text-white transition-colors duration-300">
@@ -58,7 +58,7 @@ export default function Footer() {
 
         {/* Services Links */}
         <div>
-          <h4 className="text-white font-semibold text-xs tracking-widest uppercase mb-6 border-l-2 border-[#B03DFF] pl-3">Services</h4>
+          <h4 className="text-white font-normal text-xs tracking-widest uppercase mb-6 border-l-2 border-[#B03DFF] pl-3">Services</h4>
           <ul className="flex flex-col gap-3 text-sm text-white/60 font-light">
             <li><Link href="/services" className="hover:text-white transition-colors">Web Development</Link></li>
             <li><Link href="/services" className="hover:text-white transition-colors">Designing</Link></li>
@@ -69,7 +69,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-white font-semibold text-xs tracking-widest uppercase mb-6 border-l-2 border-[#B03DFF] pl-3">Quick Links</h4>
+          <h4 className="text-white font-normal text-xs tracking-widest uppercase mb-6 border-l-2 border-[#B03DFF] pl-3">Quick Links</h4>
           <ul className="flex flex-col gap-3 text-sm text-white/60 font-light">
             <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
             <li><Link href="/portfolio" className="hover:text-white transition-colors">Portfolio Showcase</Link></li>
@@ -81,7 +81,7 @@ export default function Footer() {
         {/* Contact info & Newsletter */}
         <div className="flex flex-col gap-6">
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-widest uppercase mb-4 border-l-2 border-[#B03DFF] pl-3">Contact</h4>
+            <h4 className="text-white font-normal text-xs tracking-widest uppercase mb-4 border-l-2 border-[#B03DFF] pl-3">Contact</h4>
             <ul className="flex flex-col gap-2.5 text-sm text-white/60 font-light">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#B03DFF] flex-shrink-0" />
@@ -98,7 +98,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-widest uppercase mb-3">Newsletter</h4>
+            <h4 className="text-white font-normal text-xs tracking-widest uppercase mb-3">Newsletter</h4>
             <form onSubmit={handleSubscribe} className="relative flex items-center" suppressHydrationWarning>
               <input
                 type="email"

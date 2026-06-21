@@ -16,7 +16,7 @@ export default function BlogPage() {
           <Sparkles className="w-3.5 h-3.5 text-[#D9B3FF]" />
           <span className="text-[10px] uppercase tracking-widest text-[#D9B3FF] font-semibold">Insights & Guides</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold font-display text-white leading-tight">
+        <h1 className="text-4xl md:text-5xl font-normal font-display text-white leading-tight">
           Maxora Tech <br />
           <span className="text-gradient-primary">Insights Blog</span>
         </h1>
@@ -54,7 +54,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                   
-                  <h3 className="text-white font-bold text-base md:text-lg group-hover:text-[#D9B3FF] transition-colors leading-snug mt-1 line-clamp-2">
+                  <h3 className="text-white font-normal text-base md:text-lg group-hover:text-[#D9B3FF] transition-colors leading-snug mt-1 line-clamp-2">
                     {post.title}
                   </h3>
                   

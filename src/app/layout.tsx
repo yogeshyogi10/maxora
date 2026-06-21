@@ -1,9 +1,9 @@
 
 
 import type { Metadata } from "next";
-import { Bellefair, Inter } from 'next/font/google';
-const bellefair = Bellefair({ weight: '400', subsets: ['latin'], variable: '--font-display' });
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+import { Sora, Plus_Jakarta_Sans } from 'next/font/google';
+const sora = Sora({ subsets: ['latin'], variable: '--font-display' });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-sans' });
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -83,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full scroll-smooth ${inter.variable} ${bellefair.variable}`}
+      className={`h-full scroll-smooth ${plusJakartaSans.variable} ${sora.variable}`}
     >
       <body className="bg-background text-foreground min-h-screen flex flex-col font-sans selection:bg-[#B03DFF]/30 selection:text-[#D9B3FF] relative">
         <Preloader />

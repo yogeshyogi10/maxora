@@ -41,7 +41,7 @@ export default function ServicesPage() {
           <Sparkles className="w-3.5 h-3.5 text-[#D9B3FF]" />
           <span className="text-[10px] uppercase tracking-widest text-[#D9B3FF] font-semibold">Our Capabilities</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold font-display text-white leading-tight">
+        <h1 className="text-4xl md:text-5xl font-normal font-display text-white leading-tight">
           Bespoke Technical <br />
           <span className="text-gradient-primary">Capabilities</span>
         </h1>
@@ -82,7 +82,7 @@ export default function ServicesPage() {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#660F56] to-[#B03DFF] flex items-center justify-center border border-white/10 shadow-lg">
                 {React.createElement(serviceIcons[activeCategory.iconName] || Code2, { className: "w-6 h-6 text-white" })}
               </div>
-              <h2 className="text-white font-extrabold text-2xl md:text-3xl font-display">{activeCategory.title}</h2>
+              <h2 className="text-white font-normal text-2xl md:text-3xl font-display">{activeCategory.title}</h2>
             </div>
             
             <p className="text-white/75 text-sm md:text-base leading-relaxed font-light">
@@ -92,7 +92,7 @@ export default function ServicesPage() {
             <hr className="border-white/5" />
 
             <div className="flex flex-col gap-4">
-              <h4 className="text-white font-bold text-xs uppercase tracking-widest text-[#D9B3FF]">Includes Standard Deliverables:</h4>
+              <h4 className="text-white font-normal text-xs uppercase tracking-widest text-[#D9B3FF]">Includes Standard Deliverables:</h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {activeCategory.services.map((serv, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs text-white/70 font-light">
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                   {idx + 1}
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-sm">{out.title}</h4>
+                  <h4 className="text-white font-normal text-sm">{out.title}</h4>
                   <p className="text-white/50 text-xs font-light mt-1 leading-relaxed">{out.desc}</p>
                 </div>
               </div>

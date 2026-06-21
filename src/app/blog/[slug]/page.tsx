@@ -37,7 +37,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           <span className="text-[9px] uppercase tracking-widest text-white font-bold bg-[#B03DFF]/30 px-3 py-1 rounded-full border border-white/10 w-fit">
             {post.category}
           </span>
-          <h1 className="text-2xl md:text-4xl font-extrabold font-display text-white leading-tight">
+          <h1 className="text-2xl md:text-4xl font-normal font-display text-white leading-tight">
             {post.title}
           </h1>
           <div className="flex items-center gap-4 text-[10px] text-white/70 font-light">
@@ -57,7 +57,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           {post.content}
         </p>
         
-        <h3 className="text-white font-extrabold text-lg md:text-xl font-display mt-8 mb-4">
+        <h3 className="text-white font-normal text-lg md:text-xl font-display mt-8 mb-4">
           Visual Aesthetics Met With Engineering Rigor
         </h3>
         
@@ -74,7 +74,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
       {/* Bottom Consulting Callout */}
       <div className="p-8 md:p-10 rounded-2xl border border-glass bg-gradient-to-r from-[#17011d] to-[#07011f] text-center flex flex-col items-center gap-4">
-        <h3 className="text-white font-extrabold text-xl font-display">Integrate Premium Engineering Today</h3>
+        <h3 className="text-white font-normal text-xl font-display">Integrate Premium Engineering Today</h3>
         <p className="text-white/60 text-xs font-light max-w-md leading-relaxed">
           Book a briefing sprint with our developers to review your system, customize storefront features, or execute digital campaigns.
         </p>

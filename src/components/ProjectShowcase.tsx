@@ -45,7 +45,7 @@ export default function ProjectShowcase({ project }: ProjectShowcaseProps) {
               <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center border border-white/10">
                 <span className="text-white font-extrabold text-xs">M</span>
               </div>
-              <h4 className="text-white font-extrabold text-sm tracking-tight leading-tight">
+              <h4 className="text-white font-normal text-sm tracking-tight leading-tight">
                 {project.name}
               </h4>
               <p className="text-[9px] text-[#D9B3FF] font-medium tracking-wide">
@@ -75,7 +75,7 @@ export default function ProjectShowcase({ project }: ProjectShowcaseProps) {
               {project.result}
             </span>
           </div>
-          <h3 className="text-white font-extrabold text-lg group-hover:text-[#D9B3FF] transition-colors duration-300 leading-snug">
+          <h3 className="text-white font-normal text-lg group-hover:text-[#D9B3FF] transition-colors duration-300 leading-snug">
             {project.name}
           </h3>
           <p className="text-white/60 text-xs font-light line-clamp-2 leading-relaxed">

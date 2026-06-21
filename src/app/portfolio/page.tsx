@@ -23,7 +23,7 @@ export default function PortfolioPage() {
           <Sparkles className="w-3.5 h-3.5 text-[#D9B3FF]" />
           <span className="text-[10px] uppercase tracking-widest text-[#D9B3FF] font-semibold">Our Showcase</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold font-display text-white leading-tight">
+        <h1 className="text-4xl md:text-5xl font-normal font-display text-white leading-tight">
           Let's Engineer <br />
           <span className="text-gradient-primary">Deployments</span>
         </h1>

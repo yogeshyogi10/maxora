@@ -60,7 +60,7 @@ export default function Navbar() {
             className="shrink-0 w-auto h-14 object-contain -mt-1 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(176,61,255,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(176,61,255,0.7)]"
           />
           <div className="flex flex-col text-left">
-            <span className="text-white font-extrabold text-xl tracking-wider font-display leading-none group-hover:text-[#D9B3FF] transition-colors duration-300">
+            <span className="text-white font-normal text-xl tracking-wider font-display leading-none group-hover:text-[#D9B3FF] transition-colors duration-300">
               MAXORA
             </span>
             <span className="text-white/60 text-[9px] uppercase tracking-[0.25em] font-light mt-1 leading-none group-hover:text-white transition-colors duration-300">

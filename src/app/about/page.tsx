@@ -45,7 +45,7 @@ export default function AboutPage() {
           <Sparkles className="w-3.5 h-3.5 text-[#D9B3FF]" />
           <span className="text-[10px] uppercase tracking-widest text-[#D9B3FF] font-semibold">Behind The Code</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold font-display text-white leading-tight">
+        <h1 className="text-4xl md:text-5xl font-normal font-display text-white leading-tight">
           Engineering the Future of <br />
           <span className="text-gradient-primary">Digital Prestige</span>
         </h1>
@@ -58,7 +58,7 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
         <div className="flex flex-col gap-6">
           <span className="text-[#D9B3FF] font-semibold text-xs uppercase tracking-widest">Our Philosophy</span>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white font-display">
+          <h2 className="text-2xl md:text-3xl font-normal text-white font-display">
             Speed is a Status Symbol. <br />Design is a Differentiator.
           </h2>
           <p className="text-white/70 text-sm font-light leading-relaxed">
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <div className="w-9 h-9 rounded-lg bg-[#B03DFF]/10 flex items-center justify-center border border-[#B03DFF]/20 text-[#D9B3FF]">
                   <Icon className="w-4 h-4" />
                 </div>
-                <h3 className="text-white font-bold text-sm tracking-tight">{v.title}</h3>
+                <h3 className="text-white font-normal text-sm tracking-tight">{v.title}</h3>
                 <p className="text-white/50 text-xs font-light leading-relaxed">{v.desc}</p>
               </div>
             );
@@ -96,7 +96,7 @@ export default function AboutPage() {
       <section className="py-16 border-t border-white/5 mb-16">
         <div className="text-center mb-16">
           <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Our Track Record</span>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white font-display mt-2">Interactive Milestones</h2>
+          <h2 className="text-2xl md:text-3xl font-normal text-white font-display mt-2">Interactive Milestones</h2>
         </div>
 
         <div className="relative border-l border-white/10 max-w-3xl mx-auto pl-8 flex flex-col gap-10">
@@ -106,8 +106,8 @@ export default function AboutPage() {
               <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#050014] border border-[#B03DFF] flex items-center justify-center">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#D9B3FF] animate-pulse" />
               </div>
-              <span className="text-[#D9B3FF] font-bold text-lg font-display">{m.year}</span>
-              <h3 className="text-white font-bold text-base md:text-lg mt-1">{m.title}</h3>
+              <span className="text-[#D9B3FF] font-normal text-lg font-display">{m.year}</span>
+              <h3 className="text-white font-normal text-base md:text-lg mt-1">{m.title}</h3>
               <p className="text-white/60 text-xs md:text-sm font-light mt-1.5 leading-relaxed">{m.desc}</p>
             </div>
           ))}

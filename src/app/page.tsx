@@ -286,7 +286,7 @@ export default function HomePage() {
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Luxury Digital Craftsmanship</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-display leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight font-display leading-tight text-white">
               Crafting Digital <br />
               <span className="text-shine-animated">Experiences</span> <br />
               That Drive Growth.
@@ -320,7 +320,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + idx * 0.1, duration: 0.6, type: "spring", stiffness: 100 }}
                 >
-                  <span className="text-3xl md:text-4xl font-extrabold font-display text-white">
+                  <span className="text-3xl md:text-4xl font-normal font-display text-white">
                     <AnimatedCounter value={stat.number} suffix={stat.suffix} />
                   </span>
                   <span className="text-[11px] uppercase tracking-wider text-white/55 font-light mt-1">{stat.label}</span>
@@ -345,7 +345,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Targeted Domain Expertise</span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-2 font-display">Industries We Specialize In</h2>
+            <h2 className="text-2xl md:text-3xl font-normal text-white mt-2 font-display">Industries We Specialize In</h2>
           </div>
 
           <motion.div
@@ -387,7 +387,7 @@ export default function HomePage() {
             className="lg:col-span-6 flex flex-col gap-6"
           >
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Our Mission & Values</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white font-display leading-tight">
+            <h2 className="text-3xl md:text-4xl font-normal text-white font-display leading-tight">
               Transforming Ideas <br />Into Digital Success
             </h2>
             <p className="text-white/70 text-sm md:text-base leading-relaxed font-light">
@@ -396,13 +396,13 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
               <div className="p-5 rounded-2xl border border-glass bg-[#0d0724]/20">
-                <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-2">Our Mission</h4>
+                <h4 className="text-white font-normal text-sm uppercase tracking-wider mb-2">Our Mission</h4>
                 <p className="text-white/60 text-xs font-light leading-relaxed">
                   We aim to provide end-to-end solutions — from website development to social media management and SEO — enabling our clients to build credibility, attract customers, and scale their business in the digital world.
                 </p>
               </div>
               <div className="p-5 rounded-2xl border border-glass bg-[#0d0724]/20">
-                <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-2">Our Vision</h4>
+                <h4 className="text-white font-normal text-sm uppercase tracking-wider mb-2">Our Vision</h4>
                 <p className="text-white/60 text-xs font-light leading-relaxed">
                   To empower individuals and businesses to establish a strong digital presence by making online growth simple, accessible, and impactful for everyone.
                 </p>
@@ -432,7 +432,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 rounded-full bg-[#B03DFF]/10 flex items-center justify-center text-xs font-bold text-[#D9B3FF] border border-[#B03DFF]/20">
                   {i + 1}
                 </div>
-                <h4 className="text-white font-bold text-sm mt-2">{v.value}</h4>
+                <h4 className="text-white font-normal text-sm mt-2">{v.value}</h4>
                 <p className="text-white/50 text-xs font-light leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
@@ -446,7 +446,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Bespoke Offerings</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Specialized Digital Capabilities</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Specialized Digital Capabilities</h2>
             <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed mt-3">
               We deliver premium digital assets and engineering pipelines tailored to elevate corporate growth.
             </p>
@@ -470,7 +470,7 @@ export default function HomePage() {
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#660F56] to-[#B03DFF] flex items-center justify-center border border-white/10 shadow-lg">
                         <IconComp className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-white font-bold text-lg leading-tight tracking-tight">
+                      <h3 className="text-white font-normal text-lg leading-tight tracking-tight">
                         {cat.title}
                       </h3>
                     </div>
@@ -546,7 +546,7 @@ export default function HomePage() {
                         <span className="text-[10px] tracking-widest uppercase font-bold text-[#D9B3FF]">
                           Phase 0{idx + 1}
                         </span>
-                        <h3 className="text-white font-extrabold text-xl mt-1.5 mb-3 font-display">
+                        <h3 className="text-white font-normal text-xl mt-1.5 mb-3 font-display">
                           {step.title}
                         </h3>
                         <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">
@@ -574,7 +574,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Creative Portfolio</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">High-Caliber Case Studies</h2>
+              <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">High-Caliber Case Studies</h2>
             </div>
             <CustomButton href="/portfolio" variant="outline" size="md">
               View All Works <ArrowRight className="w-4 h-4 ml-1" />
@@ -604,7 +604,7 @@ export default function HomePage() {
 
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium font-display">Proven Standards</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Why Ambitious Brands Choose Us</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Why Ambitious Brands Choose Us</h2>
             <p className="text-white/60 text-xs md:text-sm font-light mt-3">
               We design and code to the highest technical benchmarks to support enterprise operations.
             </p>
@@ -628,7 +628,7 @@ export default function HomePage() {
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-[#B03DFF]/20 group-hover:border-[#B03DFF]/35 transition-all duration-300">
                     <IconComp className="w-5 h-5 text-[#D9B3FF] group-hover:scale-110 transition-transform" />
                   </div>
-                  <h3 className="text-white font-bold text-base mt-2 group-hover:text-[#D9B3FF] transition-colors">{item.title}</h3>
+                  <h3 className="text-white font-normal text-base mt-2 group-hover:text-[#D9B3FF] transition-colors">{item.title}</h3>
                   <p className="text-white/50 text-xs leading-relaxed font-light">{item.description}</p>
                 </motion.div>
               );
@@ -639,16 +639,21 @@ export default function HomePage() {
       </section>
 
       {/* 8. PRICE QUOTE SECTION */}
-      <section className="py-24 border-y border-white/5 bg-[#050014]/40 relative z-10">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Custom Pricing</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Get a Custom Quote</h2>
-          <p className="text-white/60 text-sm font-light mt-4 mb-8 leading-relaxed max-w-2xl mx-auto">
+      <section className="py-24 relative z-10 px-4 md:px-0">
+        <div className="max-w-4xl mx-auto px-8 py-16 lg:px-12 text-center relative rounded-[2rem] border border-[#B03DFF]/40 bg-gradient-to-br from-[#1a0b2e] to-[#050014] shadow-[0_0_80px_-15px_rgba(176,61,255,0.4)] overflow-hidden">
+          <div className="absolute inset-0 bg-[#B03DFF]/10 filter blur-[60px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9B3FF]/10 rounded-full filter blur-[80px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
+          
+          <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold relative z-10">Custom Pricing</span>
+          <h2 className="text-3xl md:text-5xl font-normal text-white mt-4 font-display relative z-10">Get a Custom Quote</h2>
+          <p className="text-white/80 text-sm md:text-base font-light mt-6 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
             Every project is unique. We provide tailored solutions to match your specific business goals and technical requirements. Drop us a message with your project details, and our team will get back to you with a comprehensive quote.
           </p>
-          <CustomButton href="#contact" variant="primary" size="lg">
-            Request a Quote
-          </CustomButton>
+          <div className="relative z-10">
+            <CustomButton href="#contact" variant="primary" size="lg">
+              Request a Quote
+            </CustomButton>
+          </div>
         </div>
       </section>
 
@@ -658,7 +663,7 @@ export default function HomePage() {
 
           <div className="text-center mb-16">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Testimonials</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Client Endorsements</h2>
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Client Endorsements</h2>
           </div>
 
           {/* Testimonial slider wrapper */}
@@ -685,7 +690,7 @@ export default function HomePage() {
                       {testimonials[currentTestimonial].avatar}
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm">{testimonials[currentTestimonial].name}</h4>
+                      <h4 className="text-white font-normal text-sm">{testimonials[currentTestimonial].name}</h4>
                       <p className="text-white/50 text-xs font-light">{testimonials[currentTestimonial].role}, {testimonials[currentTestimonial].company}</p>
                     </div>
                   </div>
@@ -730,8 +735,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold font-display">Common Queries</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-2 font-display">Frequently Asked Questions</h2>
+            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-normal font-display">Common Queries</span>
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Frequently Asked Questions</h2>
           </div>
 
           <Accordion items={faqData} />
@@ -749,7 +754,7 @@ export default function HomePage() {
 
             <div className="relative z-10 flex flex-col gap-3 max-w-xl text-center lg:text-left">
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Complimentary Value Analysis</span>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-white font-display leading-tight">
+              <h3 className="text-2xl md:text-3xl font-normal text-white font-display leading-tight">
                 Get a Free Website Audit Worth ₹5,000
               </h3>
               <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">
@@ -808,7 +813,7 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-25D366/20">
                       <CheckCircle2 className="w-6 h-6 text-[#25D366]" />
                     </div>
-                    <h4 className="text-white font-bold text-base">Audit Claimed!</h4>
+                    <h4 className="text-white font-normal text-base">Audit Claimed!</h4>
                     <p className="text-white/60 text-xs font-light leading-relaxed max-w-[280px]">
                       Check your inbox at <span className="font-semibold text-white">{auditEmail}</span>. Our technical analyst will contact you soon.
                     </p>
@@ -827,7 +832,7 @@ export default function HomePage() {
           {/* Left Text */}
           <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-28">
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Consultation Desk</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white font-display leading-tight">
+            <h2 className="text-3xl md:text-4xl font-normal text-white font-display leading-tight">
               Ready to Spark <br />Digital Innovation?
             </h2>
             <p className="text-white/70 text-sm font-light leading-relaxed">
@@ -953,7 +958,7 @@ export default function HomePage() {
                   <div className="w-16 h-16 rounded-full bg-[#25D366]/10 flex items-center justify-center border border-[#25D366]/20">
                     <CheckCircle2 className="w-8 h-8 text-[#25D366]" />
                   </div>
-                  <h3 className="text-white font-extrabold text-xl font-display">Booking Complete!</h3>
+                  <h3 className="text-white font-normal text-xl font-display">Booking Complete!</h3>
                   <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed max-w-[360px]">
                     Hi <span className="font-semibold text-white">{contactName}</span>, your project inquiry has been queued. Our strategist will email you at <span className="font-semibold text-white">{contactEmail}</span> inside 12 hours.
                   </p>
