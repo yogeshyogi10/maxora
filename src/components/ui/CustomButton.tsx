@@ -28,7 +28,7 @@ export default function CustomButton({
   const [isHovered, setIsHovered] = useState(false);
 
   const baseStyles =
-    "relative inline-flex items-center justify-center font-medium rounded-full transition-all duration-500 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#B03DFF]/50 cursor-pointer select-none z-10 group font-display tracking-wider";
+    "relative inline-flex items-center justify-center font-medium rounded-full transition-all duration-500 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[#B03DFF]/50 cursor-pointer select-none z-10 group tracking-wider";
 
   const variants = {
     primary:

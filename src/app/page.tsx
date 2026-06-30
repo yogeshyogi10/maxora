@@ -41,6 +41,8 @@ const Card3D = dynamic(() => import("@/components/ui/Card3D"), { ssr: true });
 const AnimatedCounter = dynamic(() => import("@/components/ui/AnimatedCounter"), { ssr: false });
 const ProjectShowcase = dynamic(() => import("@/components/ProjectShowcase"), { ssr: true });
 const Accordion = dynamic(() => import("@/components/ui/Accordion"), { ssr: true });
+const StackedServices = dynamic(() => import("@/components/StackedServices"), { ssr: true });
+const StorytellingProblem = dynamic(() => import("@/components/StorytellingProblem"), { ssr: true });
 import {
   servicesData,
   projectsData,
@@ -80,6 +82,54 @@ const testimonials = [
   }
 ];
 
+
+
+// --- CINEMATIC TIMELINE STEP (Entrance Reveal) ---
+const CinematicTimelineStep = ({ step, idx }: any) => {
+  const isEven = idx % 2 === 0;
+  
+  // Slide in from left for even, right for odd, just like the about section's x-axis reveal
+  const xOffset = isEven ? -40 : 40;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40, x: xOffset }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      viewport={{ once: true, margin: "-150px" }}
+      transition={{ type: "spring", stiffness: 60, damping: 20, duration: 1 }}
+      className={`flex flex-col md:flex-row items-start md:items-center justify-between w-full relative ${isEven ? "md:flex-row-reverse" : ""}`}
+    >
+      {/* Glowing Timeline Connector Node */}
+      <div className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full bg-[#050014] border border-[#B03DFF]/50 flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(176,61,255,0.4)]">
+        <motion.div
+          className="w-2 h-2 rounded-full bg-white"
+          whileInView={{ scale: [1, 1.5, 1] }}
+          viewport={{ once: false }}
+          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+        />
+      </div>
+
+      {/* Step Card */}
+      <div className="w-full md:w-[45%] pl-10 md:pl-0">
+        <Card3D className="p-7 md:p-10 bg-[#070312]/90 backdrop-blur-xl border border-white/5 hover:border-[#D9B3FF]/30 transition-all duration-700 shadow-2xl relative overflow-hidden group">
+          {/* Subtle luxury shine overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+          
+          <span className="text-[9px] tracking-[0.3em] uppercase font-bold text-[#D9B3FF]/80 mb-2 block">
+            Phase 0{idx + 1}
+          </span>
+          <h3 className="text-white font-normal text-2xl mt-1.5 mb-4 font-display tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#D9B3FF] transition-all duration-500">
+            {step.title}
+          </h3>
+          <p className="text-white/50 text-sm font-light leading-loose group-hover:text-white/70 transition-colors duration-500">
+            {step.desc}
+          </p>
+        </Card3D>
+      </div>
+      <div className="hidden md:block w-[45%]" />
+    </motion.div>
+  );
+};
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -286,14 +336,14 @@ export default function HomePage() {
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Luxury Digital Craftsmanship</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight font-display leading-tight text-white">
-              Crafting Digital <br />
-              <span className="text-shine-animated">Experiences</span> <br />
-              That Drive Growth.
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight font-display leading-tight text-white">
+              Engineered for Growth. <br />
+              Designed for <br />
+              <span className="text-shine-animated">Luxury.</span>
             </h1>
 
             <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-xl font-light">
-              Custom Websites, Shopify Stores, WordPress Solutions, UI/UX Design, Digital Marketing, Social Media Management, Poster Design & Digital Branding.
+              We are a luxury web design and digital marketing agency specializing in Custom Next.js Web Development, high-converting Shopify Stores, WordPress Solutions, and enterprise UI/UX Design. Partner with top developers in India to drive exponential growth.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-2">
@@ -340,41 +390,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. TRUSTED INDUSTRIES SECTION (Stagger Reveal) */}
-      <section className="py-20 border-y border-white/5 bg-[#050014]/30 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Targeted Domain Expertise</span>
-            <h2 className="text-2xl md:text-3xl font-normal text-white mt-2 font-display">Industries We Specialize In</h2>
-          </div>
+            {/* 1.5 STORYTELLING PROBLEM */}
+      <StorytellingProblem />
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {industryIcons.map((ind, index) => {
-              const IconComp = ind.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="p-5 rounded-2xl border border-glass bg-white/[0.02] flex flex-col items-center justify-center text-center gap-3 transition-all duration-300 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/5 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-[#B03DFF]/20 group-hover:border-[#B03DFF]/30 transition-all duration-300">
-                    <IconComp className="w-5 h-5 text-[#D9B3FF] group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="text-xs md:text-sm font-medium text-white/80 group-hover:text-white transition-colors">{ind.name}</span>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 3. ABOUT SECTION (Entrance Reveal) */}
+{/* 3. ABOUT SECTION (Entrance Reveal) */}
       <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
@@ -388,7 +407,7 @@ export default function HomePage() {
           >
             <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Our Mission & Values</span>
             <h2 className="text-3xl md:text-4xl font-normal text-white font-display leading-tight">
-              Transforming Ideas <br />Into Digital Success
+              Transforming Brands with Custom <br />Web Development & Digital Marketing
             </h2>
             <p className="text-white/70 text-sm md:text-base leading-relaxed font-light">
               At Maxora, our mission is to help brands launch and grow online through professionally crafted websites, compelling visual designs, and result-driven digital strategies.
@@ -441,131 +460,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. SERVICES SECTION (Grid Reveal) */}
-      <section className="py-24 border-t border-white/5 bg-[#050014]/50 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Bespoke Offerings</span>
-            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Specialized Digital Capabilities</h2>
-            <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed mt-3">
-              We deliver premium digital assets and engineering pipelines tailored to elevate corporate growth.
-            </p>
-          </div>
-
-          {/* Service Cards Grid with Stagger */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"
-          >
-            {servicesData.map((cat, idx) => {
-              const IconComp = serviceIcons[cat.iconName] || Code2;
-              return (
-                <motion.div key={cat.id} variants={fadeInUp}>
-                  <Card3D className="p-6 flex flex-col gap-5 h-full" onClick={() => { }} role="button">
-                    {/* Header */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#660F56] to-[#B03DFF] flex items-center justify-center border border-white/10 shadow-lg">
-                        <IconComp className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-white font-normal text-lg leading-tight tracking-tight">
-                        {cat.title}
-                      </h3>
-                    </div>
-
-                    <p className="text-white/60 text-xs leading-relaxed font-light">
-                      {cat.description}
-                    </p>
-
-                    {/* Sub-services list */}
-                    <ul className="flex flex-col gap-2.5 mt-2 border-t border-white/5 pt-4">
-                      {cat.services.map((sub, sidx) => (
-                        <li key={sidx} className="flex items-start gap-2 text-xs text-white/70 font-light">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B03DFF] mt-0.5 flex-shrink-0" />
-                          <span>{sub}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card3D>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 5. PROCESS SECTION (Dynamic Scrollytelling Alternating Timeline) */}
-      <section ref={timelineRef} className="py-24 relative z-10 overflow-hidden bg-[#050014]/20">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Operational Sprints</span>
-            <p className="text-white/60 text-xs md:text-sm font-light mt-3">
-              We align design precision with clean sprint guidelines to secure success.
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* The Scroll-Linked Timeline Progress Line */}
-            <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-[2px] bg-white/5 -translate-x-1/2">
-              <motion.div
-                className="w-full h-full bg-gradient-to-b from-[#660F56] via-[#B03DFF] to-[#D9B3FF] origin-top"
-                style={{ scaleY }}
-              />
-            </div>
-
-            {/* Timeline Alternating Steps */}
-            <div className="flex flex-col gap-16 md:gap-24">
-              {processSteps.map((step, idx) => {
-                const isEven = idx % 2 === 0;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 55 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ type: "spring", stiffness: 80, damping: 18 }}
-                    className={`flex flex-col md:flex-row items-start md:items-center justify-between w-full relative ${isEven ? "md:flex-row-reverse" : ""
-                      }`}
-                  >
-                    {/* Glowing Timeline Connector Node */}
-                    <div className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full bg-[#050014] border border-[#B03DFF] flex items-center justify-center -translate-x-1/2 z-20">
-                      <motion.div
-                        className="w-2.5 h-2.5 rounded-full bg-[#D9B3FF]"
-                        whileInView={{ scale: [1, 1.35, 1] }}
-                        viewport={{ once: false }}
-                        transition={{ repeat: Infinity, duration: 2.2 }}
-                      />
-                    </div>
-
-                    {/* Step Card */}
-                    <div className="w-full md:w-[45%] pl-10 md:pl-0">
-                      <Card3D className="p-6 md:p-8 bg-glass-card border border-glass hover:border-[#B03DFF]/30 transition-all duration-300">
-                        <span className="text-[10px] tracking-widest uppercase font-bold text-[#D9B3FF]">
-                          Phase 0{idx + 1}
-                        </span>
-                        <h3 className="text-white font-normal text-xl mt-1.5 mb-3 font-display">
-                          {step.title}
-                        </h3>
-                        <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">
-                          {step.desc}
-                        </p>
-                      </Card3D>
-                    </div>
-
-                    {/* Dummy spacer to align columns in flex rows */}
-                    <div className="hidden md:block w-[45%]" />
-                  </motion.div>
-                );
-              })}
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      {/* 4. SERVICES SECTION (Stacked Sticky Scroll) */}
+      <StackedServices />
 
       {/* 6. FEATURED PROJECTS SECTION (Grid Reveal) */}
       <section id="portfolio" className="py-24 border-t border-white/5 bg-[#050014]/40 relative z-10">
@@ -594,6 +490,44 @@ export default function HomePage() {
               </motion.div>
             ))}
           </motion.div>
+
+        </div>
+      </section>
+
+      {/* 5. PROCESS SECTION (Dynamic Scrollytelling Alternating Timeline) */}
+      <section ref={timelineRef} className="py-24 relative z-10 overflow-hidden bg-[#050014]/20">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Operational Sprints</span>
+            <p className="text-white/60 text-xs md:text-sm font-light mt-3">
+              We align design precision with clean sprint guidelines to secure success.
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* The Scroll-Linked Timeline Progress Line */}
+            <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-[2px] bg-white/5 -translate-x-1/2">
+              <motion.div
+                className="w-full h-full bg-gradient-to-b from-[#660F56] via-[#B03DFF] to-[#D9B3FF] origin-top"
+                style={{ scaleY }}
+              />
+            </div>
+
+            {/* Timeline Alternating Steps */}
+            <div className="flex flex-col gap-16 md:gap-24">
+              {processSteps.map((step, idx) => (
+                <CinematicTimelineStep 
+                  key={idx} 
+                  step={step} 
+                  idx={idx} 
+                  timelineProgress={timelineProgress} 
+                  totalSteps={processSteps.length} 
+                />
+              ))}
+            </div>
+
+          </div>
 
         </div>
       </section>
@@ -638,22 +572,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. PRICE QUOTE SECTION */}
-      <section className="py-24 relative z-10 px-4 md:px-0">
-        <div className="max-w-4xl mx-auto px-8 py-16 lg:px-12 text-center relative rounded-[2rem] border border-[#B03DFF]/40 bg-gradient-to-br from-[#1a0b2e] to-[#050014] shadow-[0_0_80px_-15px_rgba(176,61,255,0.4)] overflow-hidden">
-          <div className="absolute inset-0 bg-[#B03DFF]/10 filter blur-[60px] pointer-events-none" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9B3FF]/10 rounded-full filter blur-[80px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-          
-          <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold relative z-10">Custom Pricing</span>
-          <h2 className="text-3xl md:text-5xl font-normal text-white mt-4 font-display relative z-10">Get a Custom Quote</h2>
-          <p className="text-white/80 text-sm md:text-base font-light mt-6 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
-            Every project is unique. We provide tailored solutions to match your specific business goals and technical requirements. Drop us a message with your project details, and our team will get back to you with a comprehensive quote.
-          </p>
-          <div className="relative z-10">
-            <CustomButton href="#contact" variant="primary" size="lg">
-              Request a Quote
-            </CustomButton>
+      {/* 2. TRUSTED INDUSTRIES SECTION (Stagger Reveal) */}
+      <section className="py-20 border-y border-white/5 bg-[#050014]/30 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Targeted Domain Expertise</span>
+            <h2 className="text-2xl md:text-3xl font-normal text-white mt-2 font-display">Industries We Specialize In</h2>
           </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {industryIcons.map((ind, index) => {
+              const IconComp = ind.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="p-5 rounded-2xl border border-glass bg-white/[0.02] flex flex-col items-center justify-center text-center gap-3 transition-all duration-300 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/5 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-[#B03DFF]/20 group-hover:border-[#B03DFF]/30 transition-all duration-300">
+                    <IconComp className="w-5 h-5 text-[#D9B3FF] group-hover:scale-110 transition-transform" />
+                  </div>
+                  <span className="text-xs md:text-sm font-medium text-white/80 group-hover:text-white transition-colors">{ind.name}</span>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
@@ -730,20 +679,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10. FAQ SECTION */}
-      <section className="py-24 border-t border-white/5 relative z-10 bg-[#050014]/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-normal font-display">Common Queries</span>
-            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Frequently Asked Questions</h2>
-          </div>
-
-          <Accordion items={faqData} />
-
-        </div>
-      </section>
-
       {/* 11. LEAD MAGNET SECTION */}
       <section className="py-20 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -755,10 +690,10 @@ export default function HomePage() {
             <div className="relative z-10 flex flex-col gap-3 max-w-xl text-center lg:text-left">
               <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold">Complimentary Value Analysis</span>
               <h3 className="text-2xl md:text-3xl font-normal text-white font-display leading-tight">
-                Get a Free Website Audit Worth ₹5,000
+                Get a Free Technical SEO & Website Audit Worth ₹5,000
               </h3>
               <p className="text-white/60 text-xs md:text-sm font-light leading-relaxed">
-                Discover exact speed friction, broken links, mobile responsiveness flaws, and hidden SEO optimization opportunities on your site. Complete in 24 hours.
+                Discover exact speed friction, mobile responsiveness flaws, core web vitals, and hidden SEO optimization opportunities on your site. Detailed performance audit complete in 24 hours.
               </p>
             </div>
 
@@ -822,6 +757,39 @@ export default function HomePage() {
               </AnimatePresence>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 8. PRICE QUOTE SECTION */}
+      <section className="py-24 relative z-10 px-4 md:px-0">
+        <div className="max-w-4xl mx-auto px-8 py-16 lg:px-12 text-center relative rounded-[2rem] border border-[#B03DFF]/40 bg-gradient-to-br from-[#1a0b2e] to-[#050014] shadow-[0_0_80px_-15px_rgba(176,61,255,0.4)] overflow-hidden">
+          <div className="absolute inset-0 bg-[#B03DFF]/10 filter blur-[60px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D9B3FF]/10 rounded-full filter blur-[80px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
+          
+          <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-semibold relative z-10">Custom Pricing</span>
+          <h2 className="text-3xl md:text-5xl font-normal text-white mt-4 font-display relative z-10">Get a Custom Quote</h2>
+          <p className="text-white/80 text-sm md:text-base font-light mt-6 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
+            Every project is unique. We provide tailored solutions to match your specific business goals and technical requirements. Drop us a message with your project details, and our team will get back to you with a comprehensive quote.
+          </p>
+          <div className="relative z-10">
+            <CustomButton href="#contact" variant="primary" size="lg">
+              Request a Quote
+            </CustomButton>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. FAQ SECTION */}
+      <section className="py-24 border-t border-white/5 relative z-10 bg-[#050014]/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-normal font-display">Common Queries</span>
+            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Frequently Asked Questions</h2>
+          </div>
+
+          <Accordion items={faqData} />
+
         </div>
       </section>
 

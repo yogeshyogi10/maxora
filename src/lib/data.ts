@@ -89,7 +89,7 @@ export const servicesData: ServiceCategory[] = [
     id: "design",
     title: "Design & Creative",
     iconName: "Palette",
-    description: "Premium brand design, UI/UX, visual storytelling, and high‑impact graphics.",
+    description: "Premium luxury web design, enterprise UI/UX, visual storytelling, and high‑impact graphics.",
     services: [
       "Logo Design",
       "Brand Guidliness",
@@ -104,7 +104,7 @@ export const servicesData: ServiceCategory[] = [
     id: "web-dev",
     title: "Web Development",
     iconName: "Code2",
-    description: "Custom, high‑performance websites and web applications built with modern frameworks.",
+    description: "Custom Next.js development, responsive WordPress solutions, and optimized Shopify e-commerce stores.",
     services: [
       "Business & Portfolio",
       "E-Commerce & Custom Web",
@@ -133,7 +133,7 @@ export const servicesData: ServiceCategory[] = [
     id: "digital-marketing",
     title: "Digital Marketing",
     iconName: "Megaphone",
-    description: "Growth‑focused marketing across channels to drive leads and conversions.",
+    description: "Growth‑focused digital marketing and SEO services across channels to drive leads and conversions.",
     services: [
       "SEO & Audits",
       "On-page & Local SEO",
@@ -267,12 +267,12 @@ export const projectsData: Project[] = [
 export const whyChooseData: WhyChooseItem[] = [
   {
     title: "Modern Technologies",
-    description: "We code using Next.js 14+, React 19, TypeScript, and Framer Motion for supercharged performance and futuristic interactivity.",
+    description: "We build enterprise web solutions using Next.js 14+, React 19, TypeScript, and Framer Motion for supercharged performance.",
     iconName: "Code2"
   },
   {
     title: "SEO Optimized",
-    description: "Built-in semantic HTML, schema tags, sitemaps, and speed audits ensure your site ranks at the top of Google search pages.",
+    description: "Built-in semantic HTML, schema tags, local SEO optimization, and speed audits ensure your site ranks at the top of Google.",
     iconName: "Search"
   },
   {
@@ -282,7 +282,7 @@ export const whyChooseData: WhyChooseItem[] = [
   },
   {
     title: "Fast Delivery",
-    description: "Agile sprints and clean code architectures allow us to deliver high-end enterprise systems within optimized timelines.",
+    description: "Agile custom web development sprints allow us to deliver high-end enterprise systems within optimized timelines.",
     iconName: "Clock"
   },
   {
@@ -529,20 +529,20 @@ export const webDevPricingPlans: PricingPlan[] = [
 
 export const faqData: FAQItem[] = [
   {
-    question: "How long does a website take to build?",
-    answer: "A basic Starter landing page takes 5-7 days. Comprehensive multi-page Corporate websites or Shopify e-commerce portals average 10-20 days, depending on content availability and design feedback."
+    question: "How long does a custom website take to build?",
+    answer: "A basic Starter landing page takes 5-7 days. Comprehensive custom web development, Corporate websites, or Shopify e-commerce solutions average 10-20 days, depending on content availability and design feedback."
   },
   {
     question: "Do you provide hosting and domain setup?",
-    answer: "Yes, we set up and configure your domains, emails, and cloud servers. We typically deploy Next.js apps to Vercel/AWS and WordPress/Shopify to their native high-speed hosts."
+    answer: "Yes, we set up and configure your domains, emails, and cloud servers. We typically deploy custom Next.js apps to Vercel/AWS and WordPress/Shopify to their native high-speed hosts."
   },
   {
     question: "Do you offer post-launch website maintenance?",
-    answer: "Yes, we provide ongoing support contracts that include monthly backups, software updates, security scans, text revisions, and minor design tweaks to keep your site fresh and secure."
+    answer: "Yes, we provide ongoing support contracts that include monthly backups, software updates, security scans, technical SEO revisions, and minor design tweaks to keep your site fresh and secure."
   },
   {
-    question: "Which technologies do you use for development?",
-    answer: "Our core development is centered on React, Next.js, TypeScript, and Tailwind CSS. For CMS platforms, we use highly customized, performant layouts in WordPress and Liquid coding in Shopify."
+    question: "Which technologies do you use for web development?",
+    answer: "Our core custom web development is centered on React, Next.js, TypeScript, and Tailwind CSS. For CMS platforms, we use highly customized, performant layouts in WordPress and Liquid coding in Shopify stores."
   },
   {
     question: "Do you offer SEO (Search Engine Optimization) services?",

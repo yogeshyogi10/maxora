@@ -77,7 +77,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 relative py-1 ${isActive
+                className={`font-display text-xs uppercase tracking-widest font-medium transition-colors duration-300 relative py-1 ${isActive
                     ? "text-[#D9B3FF]"
                     : "text-white/70 hover:text-white"
                   }`}
@@ -111,7 +111,7 @@ export default function Navbar() {
       {/* Mobile Overlay Menu Drawer */}
       {isOpen && (
         <div className="fixed inset-0 bg-[#050014]/98 backdrop-blur-lg z-40 lg:hidden flex flex-col justify-center px-8">
-          <nav className="flex flex-col gap-6 text-xl uppercase tracking-widest font-semibold mb-12">
+          <nav className="flex flex-col gap-6 font-display text-xl uppercase tracking-widest font-semibold mb-12">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
