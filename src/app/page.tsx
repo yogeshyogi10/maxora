@@ -43,6 +43,10 @@ const ProjectShowcase = dynamic(() => import("@/components/ProjectShowcase"), { 
 const Accordion = dynamic(() => import("@/components/ui/Accordion"), { ssr: true });
 const StackedServices = dynamic(() => import("@/components/StackedServices"), { ssr: true });
 const StorytellingProblem = dynamic(() => import("@/components/StorytellingProblem"), { ssr: true });
+const WhyChooseSection = dynamic(() => import("@/components/WhyChooseSection"), { ssr: true });
+const IndustriesSection = dynamic(() => import("@/components/IndustriesSection"), { ssr: true });
+
+
 import {
   servicesData,
   projectsData,
@@ -532,79 +536,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. WHY CHOOSE MAXORA (Grid Reveal) */}
-      <section className="py-24 relative z-10 bg-[#050014]/65">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            {/* 7. WHY CHOOSE MAXORA (Cinematic Reveal) */}
+      <WhyChooseSection />
 
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium font-display">Proven Standards</span>
-            <h2 className="text-3xl md:text-4xl font-normal text-white mt-2 font-display">Why Ambitious Brands Choose Us</h2>
-            <p className="text-white/60 text-xs md:text-sm font-light mt-3">
-              We design and code to the highest technical benchmarks to support enterprise operations.
-            </p>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {whyChooseData.map((item, idx) => {
-              const IconComp = chooseIcons[item.iconName] || Code2;
-              return (
-                <motion.div
-                  key={idx}
-                  variants={fadeInUp}
-                  className="p-6 rounded-2xl border border-glass bg-white/[0.01] hover:bg-[#B03DFF]/5 hover:border-[#B03DFF]/30 transition-all duration-500 flex flex-col gap-4 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-[#B03DFF]/20 group-hover:border-[#B03DFF]/35 transition-all duration-300">
-                    <IconComp className="w-5 h-5 text-[#D9B3FF] group-hover:scale-110 transition-transform" />
-                  </div>
-                  <h3 className="text-white font-normal text-base mt-2 group-hover:text-[#D9B3FF] transition-colors">{item.title}</h3>
-                  <p className="text-white/50 text-xs leading-relaxed font-light">{item.description}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* 2. TRUSTED INDUSTRIES SECTION (Stagger Reveal) */}
-      <section className="py-20 border-y border-white/5 bg-[#050014]/30 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-xs uppercase tracking-widest text-[#D9B3FF] font-medium">Targeted Domain Expertise</span>
-            <h2 className="text-2xl md:text-3xl font-normal text-white mt-2 font-display">Industries We Specialize In</h2>
-          </div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {industryIcons.map((ind, index) => {
-              const IconComp = ind.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="p-5 rounded-2xl border border-glass bg-white/[0.02] flex flex-col items-center justify-center text-center gap-3 transition-all duration-300 hover:border-[#B03DFF]/30 hover:bg-[#B03DFF]/5 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 group-hover:bg-[#B03DFF]/20 group-hover:border-[#B03DFF]/30 transition-all duration-300">
-                    <IconComp className="w-5 h-5 text-[#D9B3FF] group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="text-xs md:text-sm font-medium text-white/80 group-hover:text-white transition-colors">{ind.name}</span>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
+            {/* 2. TRUSTED INDUSTRIES SECTION (Cinematic) */}
+      <IndustriesSection industryIcons={industryIcons} />
 
       {/* 9. TESTIMONIAL SECTION */}
       <section className="py-24 relative z-10 bg-[#050014]/60">
