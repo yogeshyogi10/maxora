@@ -13,7 +13,7 @@ export default function WhyChooseSection() {
     <motion.section 
       initial="hidden" 
       whileInView="visible" 
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
       className="py-32 relative z-10 bg-[#050014] overflow-hidden"
     >
       {/* Ambient Cinematic Luxury Glow */}
@@ -47,13 +47,13 @@ export default function WhyChooseSection() {
               }
             }}
             style={{ transformOrigin: "bottom center" }}
-            className="mt-4 flex flex-wrap justify-center overflow-hidden w-full"
+            className="mt-4 flex flex-wrap justify-center w-full"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal text-white font-display flex flex-col md:flex-row gap-2 md:gap-4 overflow-hidden py-2">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal text-white font-display flex flex-col md:flex-row gap-2 md:gap-4 py-2 text-center">
               {/* Left Split */}
               <motion.span
                 variants={{
-                  hidden: { opacity: 0, x: -300, filter: "blur(20px)" },
+                  hidden: { opacity: 0, x: -50, filter: "blur(20px)" },
                   visible: { opacity: 1, x: 0, filter: "blur(0px)", transition: { duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 } }
                 }}
                 className="inline-block tracking-tight"
@@ -64,7 +64,7 @@ export default function WhyChooseSection() {
               {/* Right Split */}
               <motion.span
                 variants={{
-                  hidden: { opacity: 0, x: 300, filter: "blur(20px)" },
+                  hidden: { opacity: 0, x: 50, filter: "blur(20px)" },
                   visible: { opacity: 1, x: 0, filter: "blur(0px)", transition: { duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 } }
                 }}
                 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#D9B3FF] tracking-tight"

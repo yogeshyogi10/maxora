@@ -41,7 +41,7 @@ const Card3D = dynamic(() => import("@/components/ui/Card3D"), { ssr: true });
 const AnimatedCounter = dynamic(() => import("@/components/ui/AnimatedCounter"), { ssr: false });
 const ProjectShowcase = dynamic(() => import("@/components/ProjectShowcase"), { ssr: true });
 const Accordion = dynamic(() => import("@/components/ui/Accordion"), { ssr: true });
-const StackedServices = dynamic(() => import("@/components/StackedServices"), { ssr: false });
+const StackedServices = dynamic(() => import("@/components/StackedServices"), { ssr: true });
 const StorytellingProblem = dynamic(() => import("@/components/StorytellingProblem"), { ssr: true });
 const WhyChooseSection = dynamic(() => import("@/components/WhyChooseSection"), { ssr: true });
 const IndustriesSection = dynamic(() => import("@/components/IndustriesSection"), { ssr: true });

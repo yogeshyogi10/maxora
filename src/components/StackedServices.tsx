@@ -31,7 +31,7 @@ const StackedCard = ({ cat, idx, progress, totalCards }: { cat: any, idx: number
         }} 
         className="w-full max-w-5xl px-6 relative"
       >
-        <Card3D className="p-6 md:p-8 flex flex-col gap-4 h-[320px] md:h-[380px] shadow-2xl !bg-[#0A051E] border-t border-white/20" onClick={() => {}} role="button">
+        <Card3D className="p-6 md:p-8 flex flex-col gap-4 h-[580px] md:h-[550px] shadow-2xl !bg-[#0A051E] border-t border-white/20" onClick={() => {}} role="button">
            {/* Header */}
            <div className="flex items-center gap-4">
              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#660F56] to-[#B03DFF] flex items-center justify-center border border-white/10 shadow-lg">
