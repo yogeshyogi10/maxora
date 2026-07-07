@@ -31,7 +31,7 @@ const StackedCard = ({ cat, idx, progress, totalCards }: { cat: any, idx: number
         }} 
         className="w-full max-w-5xl px-6 relative"
       >
-        <Card3D className="p-8 md:p-10 flex flex-col gap-6 h-full shadow-2xl !bg-[#0A051E] border-t border-white/20" onClick={() => {}} role="button">
+        <Card3D className="p-6 md:p-8 flex flex-col gap-4 h-[320px] md:h-[380px] shadow-2xl !bg-[#0A051E] border-t border-white/20" onClick={() => {}} role="button">
            {/* Header */}
            <div className="flex items-center gap-4">
              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#660F56] to-[#B03DFF] flex items-center justify-center border border-white/10 shadow-lg">
@@ -94,16 +94,16 @@ export default function StackedServices() {
       {/* Floating Background Icons */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="sticky top-0 h-screen w-full overflow-hidden">
-          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[20%] left-[5%] md:left-[10%]">
+          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} style={{ willChange: "transform" }} className="absolute top-[20%] left-[5%] md:left-[10%]">
             <Code2 className="w-16 h-16 md:w-24 md:h-24 text-white/5 transform -rotate-12" />
           </motion.div>
-          <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[60%] left-[8%] md:left-[15%]">
+          <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ willChange: "transform" }} className="absolute top-[60%] left-[8%] md:left-[15%]">
             <Share2 className="w-20 h-20 md:w-32 md:h-32 text-white/5 transform rotate-12" />
           </motion.div>
-          <motion.div animate={{ y: [0, -30, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[30%] right-[5%] md:right-[10%]">
+          <motion.div animate={{ y: [0, -30, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} style={{ willChange: "transform" }} className="absolute top-[30%] right-[5%] md:right-[10%]">
             <Palette className="w-24 h-24 md:w-36 md:h-36 text-white/5 transform rotate-6" />
           </motion.div>
-          <motion.div animate={{ y: [0, 25, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[20%] right-[8%] md:right-[15%]">
+          <motion.div animate={{ y: [0, 25, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }} style={{ willChange: "transform" }} className="absolute bottom-[20%] right-[8%] md:right-[15%]">
             <Megaphone className="w-16 h-16 md:w-28 md:h-28 text-white/5 transform -rotate-6" />
           </motion.div>
         </div>

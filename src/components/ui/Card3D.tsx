@@ -64,8 +64,9 @@ export default function Card3D({ children, className = "", ...rest }: Card3DProp
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        willChange: "transform"
       }}
-      className={`relative h-full w-full rounded-2xl border-glass bg-liquid-glass vibranium-border vibranium-pulse overflow-hidden ${className}`}
+      className={`relative h-full w-full rounded-2xl border-glass bg-liquid-glass vibranium-border overflow-hidden ${className}`}
     >
       {/* Dynamic Glare Overlay */}
       <motion.div
